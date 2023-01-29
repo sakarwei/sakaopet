@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <title>OPet</title>
+    <meta name="viewport" charset="utf-8" content="width=device-width,initial-scale=1,maximum-scale=1.0,minimum-scale=1.0"/>
+    <link href="ui/style.css" rel="stylesheet"/>
+    <script src="conf.js"></script>
+    <script src="pet.js"></script>
+  </head>
+  <body>
+    <div id="petdiv">
+      <img id="pet" onclick="petclick();" onpointerenter="pointer_enter();" onpointerleave="pointer_leave();"/>
+      <div id="toolbar">
+        <img title="拖拽移动" id="move" src="ui/move.svg"/>
+        <img title="调整大小" id="resize" src="ui/resize.svg" onclick="rs();"/>
+        <img title="菜单" id="petmenu" src="ui/menu.svg" onclick="petmenu();"/>
+        <img title="使用帮助" id="help" src="ui/help.svg" onclick="help();"/>
+        <img title="宠物状态信息" id="about" src="ui/about.svg" onclick="psiquery();"/>
+        <img title="重新加载" id="refresh" src="ui/reload.svg" onclick="location.reload();"/>
+        <img title="退出此软件" id="close" src="ui/close.svg" onclick="window.close();"/>
+      </div>
+    </div>
+    <div id="pop"></div>
+    <div id="menu">
+      <button onclick="menu.yulu();">语录</button>
+      <button onclick="menu.help();">帮助</button>
+    </div>
+    <div id="psi">
+      智力值：<span id="PSI_T_I">-</span><progress id="PSI_I" max="100" value="0"></progress><br/>
+      心情值：<span id="PSI_T_S">-</span><progress id="PSI_S" max="100" value="0"></progress><br/>
+      健康值：<span id="PSI_T_P">-</span><progress id="PSI_P" max="100" value="0"></progress><br/>
+    </div>
+    <script>preload();</script>
+  </body>
+</html>

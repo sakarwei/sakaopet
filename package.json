@@ -1,0 +1,14 @@
+{
+  "name": "opet",
+  "version": "0.0.1",
+  "description": "electron 电子宠物",
+  "main": "main.js",
+  "author": "Jeun Yange",
+  "scripts":{
+    "start":"electron ."
+  },
+  "license": "MIT",
+  "devDependencies": {
+    "electron": "^21.2.3"
+  }
+}

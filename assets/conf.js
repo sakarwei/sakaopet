@@ -1,0 +1,11 @@
+pet={
+  name:"ABC",
+  birthday:"1970/1/1",
+};
+conf={
+  popup_delay:3000,
+};
+dict=[
+  "example1",
+  "example2"
+];
