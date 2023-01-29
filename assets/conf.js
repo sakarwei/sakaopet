@@ -1,6 +1,10 @@
 pet={
   name:"ABC",
   birthday:"1970/1/1",
+  imgs:{
+    default:"pet/example.svg",
+    hover:"pet/example2.svg"
+  }
 };
 conf={
   popup_delay:3000,

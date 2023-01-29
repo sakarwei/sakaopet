@@ -1,5 +1,5 @@
 const app_info=`
-关于 JOPet V0.0.1 正在开发版本
+关于 OPet V0.0.1 正在开发版本
 项目地址：https://gitee.com/Jeun1358/opet
 2023年1月29日更新
 `
@@ -20,17 +20,17 @@ function petload(target){ // 加载宠物形象
 }
 /*==【行为】==*/
 function preload(){ // 预加载
-  petload("pet/example.svg");
+  petload(pet.imgs.default);
 }
 function petclick(){ // 点击
   var target=随机数(0,(dict.length-1));
   popup(dict[target]);
 }
 function pointer_enter(){ // 鼠标进入宠物界面
-  petload("pet/example2.svg");
+  petload(pet.imgs.hover);
 }
 function pointer_leave(){ // 鼠标离开宠物界面
-  petload("pet/example.svg");
+  petload(pet.imgs.default);
 }
 function popup(content){ // 讲话气泡开启（content为内容）
   petmenu_close();psi_close();
