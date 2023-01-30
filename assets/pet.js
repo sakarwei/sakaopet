@@ -1,7 +1,7 @@
 const app_info=`
-关于 OPet V0.0.1 正在开发版本
+关于 OPet V0.0.2 正在开发版本
 项目地址：https://gitee.com/Jeun1358/opet
-2023年1月29日更新
+2023年1月30日更新
 `
 /*==【基础】==*/
 function $(t){return document.querySelector(t);}
@@ -43,8 +43,8 @@ function popup_close(){ // 讲话气泡关闭
   $("#pop").style.display="none";
   $("#pop").innerText=` `;
 }
-var resize_stat=false;
-function rs(){
+var resize_stat=false; // 显示窗口边界框
+function rs(){ // 改变大小
   if(!resize_stat){
     $("html").style.border="2px dashed #f00";
     window.eAPI.resize(true);
@@ -76,9 +76,9 @@ var menu={ // 宠物菜单操作
   help:new Function(`help();petmenu_close();`),
 }
 /*==【PSI】==*/
-function loadpsi(){ // 宠物属性加载
+function loadpsi(){ // 宠物属性加载（ 人体生物节律 拿来玩的 ）
   try{
-    if(pet.birthday){ // 获取宠物生日信息
+    if(pet.birthday){ // 获取宠物生日信息（ conf.js 中调整）
       var birth=new Date(pet.birthday); 
       var today=new Date(); 
       var delta1=today.getTime()-birth.getTime(); 
