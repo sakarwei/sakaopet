@@ -1,4 +1,4 @@
-const { app, BrowserWindow, ipcMain }=require('electron');
+const { app, BrowserWindow, ipcMain, Menu, Tray }=require('electron');
 const process=require('process');
 const path=require('path');
 const createWindow = () => {
@@ -61,6 +61,14 @@ const createWindow = () => {
 }
 
 app.whenReady().then(() => {
+  const trayico=path.join(__dirname,'assets');
+  const apptray=new Tray(path.join(trayico,'app_icon.png'));
+  const traymenu=Menu.buildFromTemplate([
+    {label:"显示宠物",click:function(){app.focus();}},
+    {label:"退出软件",click:function(){app.quit();}}
+  ]);
+  apptray.setToolTip('OPet');
+  apptray.setContextMenu(traymenu);
   createWindow();
 })
 

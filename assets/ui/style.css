@@ -3,6 +3,7 @@ body{background-color:transparent;overflow:hidden;}
 img#pet{height:160px;width:160px;}
 #toolbar img,#rs img,#pop img,#psi img{height:22px;width:22px;background:transparent;}
 #toolbar img#move{-webkit-app-region:drag;}
+#toolbar img:hover,#rs img:hover,#pop img:hover{filter:brightness(1.9);}
 #pop,#menu,#psi,#rs{display:none;}
 #pop,#menu,#psi,#rs{position:fixed;top:0;left:0;padding:3px;border:2px solid #88f;background:#ddf;color:#000;border-radius:5px;width:-webkit-fill-available;}
 #pop{opacity:0.8;line-height:1.4em;}

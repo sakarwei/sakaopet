@@ -4,6 +4,7 @@
     <title>OPet</title>
     <meta name="viewport" charset="utf-8" content="width=device-width,initial-scale=1,maximum-scale=1.0,minimum-scale=1.0"/>
     <link href="ui/style.css" rel="stylesheet"/>
+    <script src="ui.js"></script>
     <script src="conf.js"></script>
     <script src="pet.js"></script>
   </head>
@@ -16,6 +17,7 @@
         <img title="菜单" id="petmenu" src="ui/menu.svg" onclick="petmenu();"/>
         <img title="宠物状态信息" id="about" src="ui/about.svg" onclick="psiquery();"/>
         <img title="重新加载" id="refresh" src="ui/reload.svg" onclick="location.reload();"/>
+        <img title="最小化" id="minimize" src="ui/minimize.svg" onclick="window.eAPI.minimize();"/>
         <img title="退出此软件" id="close" src="ui/close.svg" onclick="window.close();"/>
       </div>
     </div>
