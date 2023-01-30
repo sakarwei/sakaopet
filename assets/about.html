@@ -4,6 +4,8 @@
     <link href="ui/ui.css" rel="stylesheet"/>
     <meta charset="UTF-8"/>
     <title>OPet 软件信息</title>
+    <script src="ui.js"></script>
+    <script src="appinfo.js"></script>
   </head>
   <body>
     <div class="window">
@@ -17,12 +19,18 @@
           <br/><br/>
           <img src="app_icon.svg" style="height:3em;width:3em;"/><br/>
           <h1>OPet</h1>
-          V0.0.1 开发版本<br/>
-          作者：Jeun Yange<br/>
+          作者：<span id="opet_author">-</span><br/>
+          版本：<span id="opet_version">-</span><br/>
+          更新时间：<span id="opet_date">-</span><br/>
           项目地址：<a href="https://gitee.com/Jeun1358/opet">https://gitee.com/Jeun1358/opet</a><br/><br/>
           <button onclick="history.go(-1);">返回</button>
         </center>
       </div>
     </div>
+    <script>
+      $("#opet_version").innerText=opet.version;
+      $("#opet_author").innerText=opet.author;
+      $("#opet_date").innerText=opet.date;
+    </script>
   </body>
 </html>

@@ -1,5 +1,5 @@
 html{height:100%;}
-body{font-family:'HarmonyOS Sans SC','Noto Sans CJK SC','微软雅黑','宋体','Simsun';height:-webkit-fill-available;}
+body{font-family:'HarmonyOS Sans SC','Noto Sans CJK SC','微软雅黑','宋体','Simsun';height:-webkit-fill-available;margin:0;}
 ul li{list-style-image:url("list.gif");}
 div.window{border-radius:6px;background:#eef;height:100%;overflow:hidden;}
 div.titlebar{text-align:right;display:flex;padding:6px;background:linear-gradient(#aaf 50%,#ccf);}

@@ -30,6 +30,17 @@ const createWindow = () => {
   ipcMain.on('min',()=>{win.minimize();});
   ipcMain.on('resize',(stat)=>{win.setResizable(stat);})
   ipcMain.on('devtool',()=>{win.webContents.toggleDevTools({mode:"detach"});});
+  ipcMain.on('zoomIn',()=>{
+    var now=win.webContents.getZoomFactor();
+    win.webContents.setZoomFactor(now+0.1);
+  })
+  ipcMain.on('zoomOut',()=>{
+    var now=win.webContents.getZoomFactor();
+    win.webContents.setZoomFactor(now-0.1);
+  })
+  ipcMain.on('zoomReset',()=>{
+    win.webContents.setZoomFactor(1);
+  })
   win.loadFile('assets/index.html');
   //globalShortcut.register('F5', () => {win.webContents.reload();})
   win.webContents.setWindowOpenHandler(({url})=>{
@@ -39,8 +50,8 @@ const createWindow = () => {
         frame: false,
         fullscreenable: false,
         transparent: true,
-        width: 600,
-        height: 500,
+        width: 500,
+        height: 400,
         webPreferences:{
           preload: path.join(__dirname,'preload.js')
         }

@@ -47,11 +47,15 @@ var resize_stat=false; // 显示窗口边界框
 function rs(){ // 改变大小
   if(!resize_stat){
     $("html").style.border="2px dashed #f00";
+    $("html").style.background="#f003";
+    $("#rs").style.display="block";
     window.eAPI.resize(true);
     resize_stat=true;
   }
   else{
     $("html").style.border="none";
+    $("html").style.background="transparent";
+    $("#rs").style.display="none";
     window.eAPI.resize(false);
     resize_stat=false;
   }
@@ -75,6 +79,10 @@ var menu={ // 宠物菜单操作
   yulu:new Function(`window.open('dictlist.html');petmenu();`),
   help:new Function(`help();petmenu_close();`),
 }
+function zoomIn(){window.eAPI.zoomIn();}
+function zoomOut(){window.eAPI.zoomOut();}
+function zoomReset(){window.eAPI.zoomReset();}
+
 /*==【PSI】==*/
 function loadpsi(){ // 宠物属性加载（ 人体生物节律 拿来玩的 ）
   try{
