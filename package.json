@@ -1,6 +1,6 @@
 {
   "name": "opet",
-  "version": "0.0.3",
+  "version": "0.1.0",
   "description": "electron 电子宠物",
   "main": "main.js",
   "author": "Jeun",

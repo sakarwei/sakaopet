@@ -1,7 +1,7 @@
 const app_info=`
-关于 OPet V0.0.2 正在开发版本
+关于 OPet V0.1.0 预览版本
 项目地址：https://gitee.com/Jeun1358/opet
-2023年1月30日更新
+2023年1月31日更新
 `
 /*==【基础】==*/
 function $(t){return document.querySelector(t);}
@@ -14,6 +14,9 @@ function about(){
 }
 function help(){
   window.open("help.html");
+}
+function yulu(){
+  window.open("dictlist.html");
 }
 function petload(target){ // 加载宠物形象
   $("#pet").src=target;
@@ -76,7 +79,7 @@ function petmenu_close(){ // 宠物菜单关闭
 }
 
 var menu={ // 宠物菜单操作
-  yulu:new Function(`window.open('dictlist.html');petmenu();`),
+  yulu:new Function(`yulu();petmenu_close();`),
   help:new Function(`help();petmenu_close();`),
 }
 function zoomIn(){window.eAPI.zoomIn();}

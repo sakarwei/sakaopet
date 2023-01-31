@@ -58,21 +58,31 @@ const createWindow = () => {
       },
     }
   })
+  const traymenu=Menu.buildFromTemplate([
+    {label:"点击反应",type:"submenu",submenu:[
+      {label:"忽略点击",click:function(){win.setIgnoreMouseEvents(true);}},
+      {label:"响应点击",click:function(){win.setIgnoreMouseEvents(false);}},
+    ]},
+    {label:"置顶",type:"submenu",submenu:[
+      {label:"置顶宠物",click:function(){win.setAlwaysOnTop(true);}},
+      {label:"不置顶",click:function(){win.setAlwaysOnTop(false);}},
+    ]},
+    {label:"显示宠物",click:function(){app.focus();}},
+    {label:"宠物语录",click:function(){win.webContents.executeJavaScript("yulu();")}},
+    {label:"使用帮助",click:function(){win.webContents.executeJavaScript("help();")}},
+    {label:"关于此软件",click:function(){win.webContents.executeJavaScript("about();")}},
+    {label:"退出软件",click:function(){app.quit();}}
+  ]);
+  const trayico=path.join(__dirname,'assets');
+  const apptray=new Tray(path.join(trayico,'app_icon.png'));
+  apptray.setToolTip('OPet');
+  apptray.setContextMenu(traymenu);
 }
 
 app.whenReady().then(() => {
-  const trayico=path.join(__dirname,'assets');
-  const apptray=new Tray(path.join(trayico,'app_icon.png'));
-  const traymenu=Menu.buildFromTemplate([
-    {label:"显示宠物",click:function(){app.focus();}},
-    {label:"退出软件",click:function(){app.quit();}}
-  ]);
-  apptray.setToolTip('OPet');
-  apptray.setContextMenu(traymenu);
   createWindow();
 })
 
 app.on('window-all-closed', () => {
   if (process.platform !== 'darwin'){app.quit();}
 })
-
