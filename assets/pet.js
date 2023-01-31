@@ -25,9 +25,6 @@ function petload(target){ // 加载宠物形象
   $("#pet").src=target;
 }
 /*==【行为】==*/
-function preload(){ // 预加载
-  petload(pet.imgs.default);
-}
 function popup(content){ // 讲话气泡开启（content为内容）
   petmenu_close();psi_close();
   try{clearTimeout(timer)}catch{};

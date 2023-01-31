@@ -23,6 +23,9 @@ const createWindow = () => {
       }
     }
   })
+  if (process.platform=='linux'||process.platform=='darwin'){
+    win.setVisibleOnAllWorkspaces(true);
+  }
   ipcMain.on('max',()=>{
     if(win.isMaximized()){win.restore();}
     else{win.maximize();}
