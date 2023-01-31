@@ -14,3 +14,23 @@ dict=[ // 点击宠物会讲的话
   "HI！",
   "你好！"
 ];
+
+function petclick(){ // 点击
+  var target=随机数(0,(dict.length-1));
+  popup(dict[target]);
+}
+function pointer_enter(){ // 鼠标进入宠物界面
+  petload(pet.imgs.hover);
+}
+function pointer_leave(){ // 鼠标离开宠物界面
+  petload(pet.imgs.default);
+}
+function pointer_click(){ // 鼠标点击宠物界面
+
+}
+function pointer_dblclick(){ // 鼠标双击宠物界面
+
+}
+function pointer_Rclick(){ // 鼠标右键宠物界面
+
+}

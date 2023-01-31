@@ -18,21 +18,14 @@ function help(){
 function yulu(){
   window.open("dictlist.html");
 }
+function weather(){ // 天气，有技术没来源。
+  // window.open("weather.html");
+}
 function petload(target){ // 加载宠物形象
   $("#pet").src=target;
 }
 /*==【行为】==*/
 function preload(){ // 预加载
-  petload(pet.imgs.default);
-}
-function petclick(){ // 点击
-  var target=随机数(0,(dict.length-1));
-  popup(dict[target]);
-}
-function pointer_enter(){ // 鼠标进入宠物界面
-  petload(pet.imgs.hover);
-}
-function pointer_leave(){ // 鼠标离开宠物界面
   petload(pet.imgs.default);
 }
 function popup(content){ // 讲话气泡开启（content为内容）
@@ -81,6 +74,7 @@ function petmenu_close(){ // 宠物菜单关闭
 var menu={ // 宠物菜单操作
   yulu:new Function(`yulu();petmenu_close();`),
   help:new Function(`help();petmenu_close();`),
+  weather:new Function(`weather();petmenu_close();`),
 }
 function zoomIn(){window.eAPI.zoomIn();}
 function zoomOut(){window.eAPI.zoomOut();}
