@@ -34,8 +34,9 @@ function pet_leave(){ // 鼠标离开宠物界面
   petload(pet.imgs.default);
 }
 function pet_dblclick(){ // 鼠标双击宠物界面
-  alert("dblclick");
+  // 没事做，要加自己加
 }
 function pet_Rclick(e){ // 鼠标右键宠物界面
   e.preventDefault(); // 谨慎删除
+  petmenu();
 }

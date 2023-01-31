@@ -44,6 +44,9 @@ const createWindow = () => {
   ipcMain.on('zoomReset',()=>{
     win.webContents.setZoomFactor(1);
   })
+  ipcMain.on('getPath',()=>{
+    return __dirname;
+  })
   win.loadFile('assets/index.html');
   //globalShortcut.register('F5', () => {win.webContents.reload();})
   win.webContents.setWindowOpenHandler(({url})=>{

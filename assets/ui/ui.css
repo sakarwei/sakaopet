@@ -12,4 +12,5 @@ div.main button{background:linear-gradient(#ccf 50%,#aaf 50%);border:none;paddin
 div.main button:hover{background:linear-gradient(#fe6 50%,#fd3 50%);}
 a{color:#00f;}
 a:hover,a:active{color:#f00;}
+iframe{border:none;height:-webkit-fill-available;width:-webkit-fill-available;}
 /* 一言难尽的 UI 外观…… */
