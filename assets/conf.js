@@ -7,6 +7,14 @@ pet={ // 宠物配置
     // 可以依据此格式继续添加自定义形象，触发方式要改下面。
   }
 };
+config_petmenu=[ // 宠物菜单配置
+  {label:"语录",exec:`yulu();petmenu_close();`},
+  {label:"帮助",exec:`help();petmenu_close();`},
+  {label:"关于此软件",exec:`about();petmenu_close();`},
+  {label:"关闭菜单",exec:`petmenu_close();`},
+]
+// {label:"【须要显示的文本】",exec:"【点击后执行的 JS 代码】"},
+// petmenu_close(); --> 关闭宠物菜单
 conf={ // 程序配置
   popup_delay:3000, // 对话框延时
 };
@@ -14,16 +22,6 @@ dict=[ // 点击宠物会讲的话
   "HI！",
   "你好！"
 ];
-
-function preload(){ // 预加载
-  petload(pet.imgs.default);
-  // ↓ 添加鼠标动作响应，小心修改
-  $("#pet").addEventListener("click",new Function(`pet_click();`));
-  $("#pet").addEventListener("pointerenter",new Function(`pet_hover();`));
-  $("#pet").addEventListener("pointerleave",new Function(`pet_leave();`));
-  $("#pet").addEventListener("contextmenu",new Function(`e`,`pet_Rclick(e);`));
-  $("#pet").addEventListener("dblclick",new Function(`pet_dblclick();`));
-}
 function pet_click(){ // 点击
   var target=随机数(0,(dict.length-1));
   popup(dict[target]);
@@ -39,10 +37,23 @@ function pet_dblclick(){ // 鼠标双击宠物界面
 }
 function pet_Rclick(e){ // 鼠标右键宠物界面
   e.preventDefault(); // 谨慎删除
-  petmenu();
+  petmenu(); // 默认是弹出宠物菜单
 }
+
+// ————————————————————————
 
 /*==【通用函数功能区】==*/
 function weather(){ // 天气，有技术没来源。
   // window.open("weather.html");
+}
+/*==【预加载】==*/
+function preload(){ // 预加载
+  petmenu_load(config_petmenu); // 加载宠物菜单
+  petload(pet.imgs.default); // 加载宠物
+  // ↓ 添加鼠标动作响应，小心修改
+  $("#pet").addEventListener("click",new Function(`pet_click();`));
+  $("#pet").addEventListener("pointerenter",new Function(`pet_hover();`));
+  $("#pet").addEventListener("pointerleave",new Function(`pet_leave();`));
+  $("#pet").addEventListener("contextmenu",new Function(`e`,`pet_Rclick(e);`));
+  $("#pet").addEventListener("dblclick",new Function(`pet_dblclick();`));
 }

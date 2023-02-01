@@ -58,11 +58,17 @@ function petmenu(){ // 宠物菜单
 function petmenu_close(){ // 宠物菜单关闭
   $("#menu").style.display="none";
 }
-
-var menu={ // 宠物菜单操作
-  yulu:new Function(`yulu();petmenu_close();`),
-  help:new Function(`help();petmenu_close();`),
-  weather:new Function(`weather();petmenu_close();`),
+function petmenu_load(cfg){ // 加载宠物菜单
+  $('#menu').innerHTML="";
+  try{
+    for(var a=0;a<cfg.length;a++){
+      var item=document.createElement("button");
+      item.setAttribute("onclick",cfg[a].exec);
+      item.innerText=cfg[a].label;
+      $('#menu').appendChild(item);
+    }
+  }
+  catch(e){alert('菜单配置出错：\n'+e);}
 }
 function zoomIn(){window.eAPI.zoomIn();}
 function zoomOut(){window.eAPI.zoomOut();}
