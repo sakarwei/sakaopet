@@ -10,6 +10,9 @@ const createWindow = () => {
     webPreferences: false,
     useContentSize: true,
     resizable: false,
+    icon: 'assets/app_icon.png',
+    title: 'Opet',
+    skipTaskbar: true,
     webPreferences:{
       preload: path.join(__dirname,'preload.js'),
       nodeIntegration: true,
@@ -44,9 +47,6 @@ const createWindow = () => {
   ipcMain.on('zoomReset',()=>{
     win.webContents.setZoomFactor(1);
   })
-  ipcMain.on('getPath',()=>{
-    return __dirname;
-  })
   win.loadFile('assets/index.html');
   //globalShortcut.register('F5', () => {win.webContents.reload();})
   win.webContents.setWindowOpenHandler(({url})=>{
@@ -58,6 +58,7 @@ const createWindow = () => {
         transparent: true,
         width: 500,
         height: 400,
+        icon: 'assets/app_icon.png',
         webPreferences:{
           preload: path.join(__dirname,'preload.js')
         }
@@ -76,6 +77,7 @@ const createWindow = () => {
     {label:"显示宠物",click:function(){app.focus();}},
     {label:"宠物语录",click:function(){win.webContents.executeJavaScript("yulu();")}},
     {label:"使用帮助",click:function(){win.webContents.executeJavaScript("help();")}},
+    {label:"重新加载",click:function(){win.webContents.reload();}},
     {label:"关于此软件",click:function(){win.webContents.executeJavaScript("about();")}},
     {label:"退出软件",click:function(){app.quit();}}
   ]);

@@ -4,7 +4,7 @@ pet={ // 宠物配置
   imgs:{
     default:"pet/normal.svg", // 默认形象（不管他、不逗他、不放鼠标他身上的时候）
     hover:"pet/smile.svg", // 鼠标放在宠物显示界面时的形象
-    // 可以依据此格式继续添加自定义形象，触发方式要改 pet.js。
+    // 可以依据此格式继续添加自定义形象，触发方式要改下面。
   }
 };
 conf={ // 程序配置
@@ -17,6 +17,7 @@ dict=[ // 点击宠物会讲的话
 
 function preload(){ // 预加载
   petload(pet.imgs.default);
+  // ↓ 添加鼠标动作响应，小心修改
   $("#pet").addEventListener("click",new Function(`pet_click();`));
   $("#pet").addEventListener("pointerenter",new Function(`pet_hover();`));
   $("#pet").addEventListener("pointerleave",new Function(`pet_leave();`));
@@ -39,4 +40,9 @@ function pet_dblclick(){ // 鼠标双击宠物界面
 function pet_Rclick(e){ // 鼠标右键宠物界面
   e.preventDefault(); // 谨慎删除
   petmenu();
+}
+
+/*==【通用函数功能区】==*/
+function weather(){ // 天气，有技术没来源。
+  // window.open("weather.html");
 }

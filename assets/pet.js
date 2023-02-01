@@ -1,15 +1,9 @@
-const app_info=`
-关于 OPet V0.1.0 预览版本
-项目地址：https://gitee.com/Jeun1358/opet
-2023年1月31日更新
-`
 /*==【基础】==*/
 function $(t){return document.querySelector(t);}
 function 随机数(小,大){
   return parseInt(Math.random()*(大-小+1)+小,10);
 }
 function about(){
-  // alert(app_info);
   window.open("about.html");
 }
 function help(){
@@ -17,9 +11,6 @@ function help(){
 }
 function yulu(){
   window.open("dictlist.html");
-}
-function weather(){ // 天气，有技术没来源。
-  // window.open("weather.html");
 }
 function petload(target){ // 加载宠物形象
   $("#pet").src=target;
@@ -42,15 +33,15 @@ function rs(){ // 改变大小
     $("html").style.border="2px dashed #f00";
     $("html").style.background="#f003";
     $("#rs").style.display="block";
-    window.eAPI.resize(true);
     resize_stat=true;
+    window.eAPI.resize(true);
   }
   else{
     $("html").style.border="none";
     $("html").style.background="transparent";
     $("#rs").style.display="none";
-    window.eAPI.resize(false);
     resize_stat=false;
+    window.eAPI.resize(false);
   }
 }
 /*==【菜单】==*/
