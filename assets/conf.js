@@ -23,6 +23,9 @@ dict=[ // 点击宠物会讲的话
   "HI！",
   "你好！"
 ];
+/*==【初始化】==*/
+var isSleeping=false;
+/*==【鼠标行为】==*/
 function pet_click(){ // 点击
   var target=随机数(0,(dict.length-1));
   popup(dict[target]);
@@ -45,9 +48,6 @@ function pet_Rclick(e){ // 鼠标右键宠物界面
   e.preventDefault(); // 谨慎删除
   petmenu(); // 默认是弹出宠物菜单
 }
-
-// ————————————————————————
-
 /*==【通用函数功能区】==*/
 function weather(){ // 天气，有技术没来源。
   // window.open("weather.html");
