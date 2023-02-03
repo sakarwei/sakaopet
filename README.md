@@ -18,7 +18,7 @@
 未来可能会添加数据导出导入功能。
 
 ## 提醒
-1. 在 assets/conf.js 修改宠物信息
+1. 在 assets/conf.js 修改宠物配置和主人信息
 2. 在 assets/pet/ 修改宠物形象
 3. 可以用 Ctrl+Shift+i 打开开发者工具
 
