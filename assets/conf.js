@@ -2,7 +2,7 @@ pet={ // 宠物配置
   name:"OPet", // 宠物名称
   birthday:"2020/3/1", // 宠物生日，显示宠物属性需要。
   master:"OPet Example", // 宠物对主人的称呼
-  // master_birthday:"", // 主人生日，需要设置的请参照上面宠物生日配置输入生日。
+  master_birthday:"2023/2/4", // 主人生日
   imgs:{
     default:"pet/normal.svg", // 默认形象（不管他、不逗他、不放鼠标他身上的时候）
     hover:"pet/smile.svg", // 鼠标放在宠物显示界面时的形象
@@ -73,8 +73,8 @@ function isbirthday(){ // 判断今天是不是主人的生日。如果是的话
     var birthday_str=(birthday.getMonth()+1)+'/'+birthday.getDate();
     var today_str=(today.getMonth()+1)+'/'+today.getDate();
     if(birthday_str==today_str){
-      if(pet.master){pet.master="你"}
-      popup("今天是"+birthday_str.replace('/','月')+'日'+"，"+pet.master+"的生日！祝你生日快乐！");
+      if(!pet.master){pet.master="你"}
+      popup("今天是"+birthday_str.replace('/','月')+'日'+"，"+"你的生日！祝你生日快乐，"+pet.master+"！");
     }
   }catch{}
 }
