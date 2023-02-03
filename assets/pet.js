@@ -17,7 +17,7 @@ function petload(target){ // 加载宠物形象
 }
 /*==【行为】==*/
 function popup(content){ // 讲话气泡开启（content为内容）
-  petmenu_close();psi_close();
+  petmenu_close();psiquery_close();
   try{clearTimeout(timer)}catch{};
   $("#pop").style.display="block";
   $("#pop").innerText=pet.name+"："+content;
@@ -51,7 +51,7 @@ function petmenu(){ // 宠物菜单
   }
   else{
     popup_close();
-    psi_close();
+    psiquery_close();
     $("#menu").style.display="block";
   }
 }
@@ -101,7 +101,7 @@ function loadpsi(){ // 宠物属性加载（ 人体生物节律 拿来玩的 ）
 function psiquery(){ // 玩家查宠物属性的入口
   if(loadpsi()){
     if($("#psi").style.display=="block"){
-      psi_close();
+      psiquery_close();
     }
     else{
       popup_close();
@@ -110,9 +110,9 @@ function psiquery(){ // 玩家查宠物属性的入口
     }
   }else{
     alert("依赖属性未设定！");
-    psi_close();
+    psiquery_close();
   }
 }
-function psi_close(){
+function psiquery_close(){
   $("#psi").style.display="none";
 }

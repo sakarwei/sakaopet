@@ -26,7 +26,7 @@ dict=[ // 点击宠物会讲的话
 function pet_click(){ // 点击
   var target=随机数(0,(dict.length-1));
   popup(dict[target]);
-  pet_click_count++;pet_click_current++;
+  pet_click_count++;
   localStorage.setItem("pet_click_count",pet_click_count);
 }
 function pet_hover(){ // 鼠标进入宠物界面
@@ -38,7 +38,7 @@ function pet_leave(){ // 鼠标离开宠物界面
 function pet_dblclick(){ // 鼠标双击宠物界面
   // 没事做，要加自己加
   // —————————————— ↓不统计双击，已注释
-   pet_click_count=pet_click_count-2;pet_click_current=pet_click_current-2;
+   pet_click_count=pet_click_count-2;
    localStorage.setItem("pet_click_count",pet_click_count);
 }
 function pet_Rclick(e){ // 鼠标右键宠物界面

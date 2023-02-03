@@ -15,7 +15,7 @@
         <img title="拖拽移动" id="move" src="ui/move.svg"/>
         <img title="调整大小" id="resize" src="ui/resize.svg" onclick="rs();"/>
         <img title="菜单" id="petmenu" src="ui/menu.svg" onclick="petmenu();"/>
-        <img title="宠物状态信息" id="about" src="ui/about.svg" onclick="psiquery();"/>
+        <img title="宠物状态信息" id="about" src="ui/about.svg" onclick="psiquery();" ondblclick="window.open('info.html');psiquery_close();"/>
         <img title="重新加载" id="refresh" src="ui/reload.svg" onclick="location.reload();"/>
         <img title="最小化" id="minimize" src="ui/minimize.svg" onclick="window.eAPI.minimize();"/>
         <img title="退出软件" id="close" src="ui/close.svg" onclick="window.close();"/>

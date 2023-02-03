@@ -8,7 +8,7 @@
     <script src="ui.js"></script>
     <script src="pet.js"></script>
     <script src="appinfo.js"></script>
-    <style>#pet_normal{height:90px;width:90px;}</style>
+    <style>#pet_normal{height:90px;width:90px;}#pet_normal,table{display:inline-block}td{padding-left:3px;padding-right:3px;}</style>
   </head>
   <body>
     <div class="window">
@@ -18,7 +18,7 @@
         <button class="C" title="关闭窗口" onclick="window.close();"><img src="ui/close.svg"/></button>
       </div>
       <div class="main">
-        <img id="pet_normal"/><br/>
+        <img id="pet_normal"/>
         <table>
           <tr><td>宠物名称</td><td id="pet_name"></td></tr>
           <tr><td>生日</td><td id="pet_birthday"></td></tr>
@@ -37,7 +37,7 @@
           </table>
         </div>
         <hr/>
-        <a href="about.html">软件信息</a>
+        OPet <span id="opet_version">-</span> &gt; <a href="about.html">软件信息</a>
       </div>
     </div>
     <script>
@@ -45,6 +45,7 @@
       $("#pet_name").innerText=pet.name;
       $("#pet_birthday").innerText=pet.birthday;
       $("#pet_click_count").innerText=localStorage.getItem("pet_click_count");
+      $("#opet_version").innerText=opet.version;
       loadpsi();
       for(var a=0;a<dict.length;a++){
         var x=document.createElement('li');
