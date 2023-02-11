@@ -58,7 +58,11 @@ function pet_Rclick(e){ // 鼠标右键宠物界面
 /*==【通用函数功能区】==*/
 function sleep(){ // 睡觉
   if(isSleeping){petload(pet.imgs.default);isSleeping=false;}
-  else{petload(pet.imgs.sleeping);isSleeping=true;}
+  else{
+    petload(pet.imgs.sleeping);
+    isSleeping=true;
+    // setTimeout("wake_up();",25200000);
+  }
 }
 function weather(){ // 天气，有技术没来源。
   // window.open("weather.html");
@@ -78,8 +82,20 @@ function isbirthday(){ // 判断今天是不是主人的生日。如果是的话
     }
   }catch{}
 }
+/*==【定时运行部分】==*/
+spend_with_pet=parseFloat(localStorage.getItem("spend_with_pet"));
+if(spend_with_pet==null||isNaN(spend_with_pet)){
+  spend_with_pet=0;
+  localStorage.setItem("spend_with_pet",0);
+}
+function spend_w_p(){
+  spend_with_pet=spend_with_pet+0.5;
+  localStorage.setItem("spend_with_pet",spend_with_pet);
+  console.log('+1')
+  setTimeout("spend_w_p();",1800000);
+}
 /*==【预加载】==*/
-var pet_click_count=localStorage.getItem("pet_click_count");
+var pet_click_count=parseFloat(localStorage.getItem("pet_click_count"));
 if(pet_click_count==null||isNaN(pet_click_count)){
   pet_click_count=0;
   localStorage.setItem("pet_click_count",0);
@@ -94,4 +110,10 @@ function preload(){ // 预加载
   $("#pet").addEventListener("pointerleave",new Function(`pet_leave();`));
   $("#pet").addEventListener("contextmenu",new Function(`e`,`pet_Rclick(e);`));
   $("#pet").addEventListener("dblclick",new Function(`pet_dblclick();`));
+  // ↓ 定时运行部分
+  setTimeout("spend_w_p();",1800000);
+  // ↓ 为以后作准备
+  // setTimeout("hungry();",1800000);
+  // setTimeout("tired();",1800000);
+  // setTimeout("sick();",1800000);
 }
