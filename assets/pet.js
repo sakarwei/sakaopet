@@ -63,12 +63,28 @@ function petmenu_load(cfg){ // 加载宠物菜单
   try{
     for(var a=0;a<cfg.length;a++){
       var item=document.createElement("button");
-      item.setAttribute("onclick",cfg[a].exec);
+      item.onclick=new Function(cfg[a].exec);
       item.innerText=cfg[a].label;
       $('#menu').appendChild(item);
     }
   }
   catch(e){alert('菜单配置出错：\n'+e);}
+}
+/*=【按钮】=*/
+function petbtn_load(cfg){
+  $('#toolbar').innerHTML="";
+  try{
+    for(var a=0;a<cfg.length;a++){
+      var item=document.createElement("img");
+      if(cfg[a].img){item.src=cfg[a].img;}
+      if(cfg[a].label){item.title=cfg[a].label;}
+      if(cfg[a].id){item.id=cfg[a].id;}
+      if(cfg[a].exec){item.onclick=new Function(cfg[a].exec);}
+      if(cfg[a].dblexec){item.ondblclick=new Function(cfg[a].dblexec);}
+      $('#toolbar').appendChild(item);
+    }
+  }
+  catch(e){alert('按钮配置出错：\n'+e);}
 }
 function zoomIn(){window.eAPI.zoomIn();}
 function zoomOut(){window.eAPI.zoomOut();}

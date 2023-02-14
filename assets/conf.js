@@ -18,10 +18,19 @@ config_petmenu=[ // 宠物菜单配置
   {label:"关于此软件",exec:`about();petmenu_close();`},
   {label:"关闭菜单",exec:`petmenu_close();`},
 ]
+config_pet_button=[ // 宠物按钮配置
+  {label:"拖拽移动",id:"move",img:"i/move.svg"}, // 建议保留ID，否则窗口很难移动。
+  {label:"调整大小",id:"resize",img:"ui/resize.svg",exec:"rs();"},
+  {label:"菜单",id:"petmenu",img:"ui/menu.svg",exec:"petmenu();"},
+  {label:"宠物状态信息",id:"about",img:"ui/about.svg",exec:"psiquery();",dblexec:"window.open('info.html');psiquery_close();"},
+  {label:"重新加载",id:"refresh",img:"ui/reload.svg",exec:"location.reload();"},
+  {label:"最小化",id:"minimize",img:"ui/minimize.svg",exec:"window.eAPI.minimize();"},
+  {label:"退出软件",id:"close",img:"ui/close.svg",exec:"window.close();"}
+]
 // {label:"【须要显示的文本】",exec:"【点击后执行的 JS 代码】"},
 // petmenu_close(); --> 关闭宠物菜单
 conf={ // 程序配置
-  popup_delay:3000, // 对话框延时
+  popup_delay:10000, // 对话框延时，单位毫秒
 };
 dict=[ // 点击宠物会讲的话
   "HI！",
@@ -102,6 +111,7 @@ if(pet_click_count==null||isNaN(pet_click_count)){
 }
 function preload(){ // 预加载
   petmenu_load(config_petmenu); // 加载宠物菜单
+  petbtn_load(config_pet_button); // 加载按钮
   petload(pet.imgs.default); // 加载宠物
   isbirthday();
   // ↓ 添加鼠标动作响应，小心修改

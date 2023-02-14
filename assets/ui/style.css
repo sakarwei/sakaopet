@@ -2,6 +2,7 @@ html{background-color:transparent;height:-webkit-fill-available;}
 body{background-color:transparent;overflow:hidden;user-select:none;}
 img#pet{height:160px;width:160px;}
 #toolbar img,#rs img,#pop img,#psi img{height:22px;width:22px;background:transparent;}
+#toolbar img{padding-left:2px;padding-right:2px;}
 #toolbar img#move{-webkit-app-region:drag;}
 #toolbar img:hover,#rs img:hover,#pop img:hover{filter:brightness(1.9);}
 img{-webkit-user-drag:none;}
