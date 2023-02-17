@@ -74,10 +74,12 @@ const createWindow = () => {
       {label:"置顶宠物",click:function(){win.setAlwaysOnTop(true);}},
       {label:"不置顶",click:function(){win.setAlwaysOnTop(false);}},
     ]},
+    {type:"separator"},
     {label:"显示宠物",click:function(){app.focus();}},
-    {label:"宠物语录",click:function(){win.webContents.executeJavaScript("yulu();")}},
+    {label:"宠物信息",click:function(){win.webContents.executeJavaScript("info();")}},
     {label:"使用帮助",click:function(){win.webContents.executeJavaScript("help();")}},
     {label:"重新加载",click:function(){win.webContents.reload();}},
+    {type:"separator"},
     {label:"关于此软件",click:function(){win.webContents.executeJavaScript("about();")}},
     {label:"退出软件",click:function(){app.quit();}}
   ]);
