@@ -1,5 +1,5 @@
 html{background-color:transparent;height:-webkit-fill-available;}
-body{background-color:transparent;overflow:hidden;user-select:none;}
+body{background-color:transparent;overflow:hidden;user-select:none;text-align:-webkit-center;}
 img#pet{height:160px;width:160px;}
 #toolbar img,#rs img,#pop img,#psi img{height:22px;width:22px;background:transparent;}
 #toolbar img{padding-left:2px;padding-right:2px;}
@@ -8,8 +8,12 @@ img#pet{height:160px;width:160px;}
 img{-webkit-user-drag:none;}
 #pop,#menu,#psi,#rs{display:none;}
 #pop,#menu,#psi,#rs{position:fixed;top:0;left:0;padding:3px;border:2px solid #88f;background:#ddf;color:#000;border-radius:5px;width:-webkit-fill-available;}
+#psi{text-align:left;}
 #pop{opacity:0.8;line-height:1.4em;user-select:all;}
 #rs{z-index:9;}
 #menu button{width:-webkit-fill-available;display:block;text-align:left;border:none;background:transparent;padding:3px;font-size:0.9em;}
 #menu button:hover{background:#07f;color:#fff;}
 #petdiv{position:fixed;bottom:0;}
+#pop_content,#pop_close{display:block;user-select:none;}
+#pop_close{background:linear-gradient(#ccf 50%,#aaf 50%);border:none;padding:2px;min-width:43px;border-radius:5px;}
+#pop_close:hover{background:linear-gradient(#fe6 50%,#fd3 50%);}

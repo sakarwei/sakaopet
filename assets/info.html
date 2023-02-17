@@ -23,7 +23,7 @@
           <tr><td>宠物名称</td><td id="pet_name"></td></tr>
           <tr><td>生日</td><td id="pet_birthday"></td></tr>
           <tr><td>累计点击次数</td><td id="pet_click_count"></td></tr>
-          <tr><td>陪伴时长（小时）</td><td id="spend_with_pet"></td></tr>
+          <tr><td>陪伴时长</td><td id="spend_with_pet"></td></tr>
         </table>
         <hr/>
         <h2>宠物语录</h2>
@@ -46,12 +46,13 @@
       $("#pet_name").innerText=pet.name;
       $("#pet_birthday").innerText=pet.birthday;
       $("#pet_click_count").innerText=localStorage.getItem("pet_click_count");
-      $("#spend_with_pet").innerText=localStorage.getItem("spend_with_pet");
+      $("#spend_with_pet").innerText=localStorage.getItem("spend_with_pet")+" 小时";
       $("#opet_version").innerText=opet.version;
       loadpsi();
       for(var a=0;a<dict.length;a++){
         var x=document.createElement('li');
-        x.innerText=dict[a];
+        if(typeof(dict[a])=="object"){x.innerText=dict[a].content;}
+        else{x.innerText=dict[a];}
         $("#content").appendChild(x)
       }
     </script>

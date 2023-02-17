@@ -9,23 +9,24 @@ function about(){
 function help(){
   window.open("help.html");
 }
-function yulu(){
-  window.open("dictlist.html");
+function info(){
+  window.open('info.html');
 }
 function petload(target){ // 加载宠物形象
   $("#pet").src=target;
 }
 /*==【行为】==*/
-function popup(content){ // 讲话气泡开启（content为内容）
+function popup(content,close_button="关闭"){ // 讲话气泡开启（content为内容）
   petmenu_close();psiquery_close();
   try{clearTimeout(timer)}catch{};
   $("#pop").style.display="block";
-  $("#pop").innerText=pet.name+"："+content;
+  $("#pop_content").innerText=content;
+  $("#pop_close").innerText=close_button;
   timer=setTimeout("popup_close()",conf.popup_delay);
 }
 function popup_close(){ // 讲话气泡关闭
   $("#pop").style.display="none";
-  $("#pop").innerText=` `;
+  $("#pop_content").innerText=` `;
 }
 var resize_stat=false; // 显示窗口边界框
 function rs(){ // 改变大小
@@ -81,6 +82,7 @@ function petbtn_load(cfg){
       if(cfg[a].id){item.id=cfg[a].id;}
       if(cfg[a].exec){item.onclick=new Function(cfg[a].exec);}
       if(cfg[a].dblexec){item.ondblclick=new Function(cfg[a].dblexec);}
+      if(cfg[a].rexec){item.oncontextmenu=new Function(cfg[a].rexec);}
       $('#toolbar').appendChild(item);
     }
   }
