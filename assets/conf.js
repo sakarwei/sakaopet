@@ -23,6 +23,9 @@ config_petmenu=[ // 宠物菜单配置
   {label:"宠物信息",exec:`pet_info();petmenu_close();`},
   {label:"重新加载",exec:"location.reload();"},
   {label:"关于此软件",exec:`about();petmenu_close();`},
+  {label:"隐藏宠物",exec:`window.eAPI.minimize();petmenu_close();`},
+  {label:"退出宠物",exec:`window.close();petmenu_close();`},
+
   // {label:"【须要显示的文本】",exec:"【点击后执行的 JS 代码】"},
 ]
 config_pet_button=[ // 宠物按钮配置
@@ -43,10 +46,12 @@ conf={ // 程序配置
 /*==【鼠标行为】==*/
 function pet_click(){ // 点击
   var target=随机数(0,(dict.length-1));
-  if(typeof(dict[target])=="object"){
+  if(typeof(dict[target])=="object"){ // 新配置
     popup(dict[target].content,dict[target].button);
   }
-  else{popup(dict[target]);}
+  else{ // 旧配置
+    popup(dict[target]);
+  }
   pet_click_count++;
   localStorage.setItem("pet_click_count",pet_click_count);
 }
