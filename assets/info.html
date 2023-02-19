@@ -26,21 +26,17 @@
           <tr><td>陪伴时长</td><td id="spend_with_pet"></td></tr>
         </table>
         <hr/>
-        <h2>宠物语录</h2>
-        <ul id="content"></ul>
-        <hr/>
-        <div id="psi">
-          <h2>PSI 指数信息</h2>
-          <table>
-            <tr><td>智力指数</td><td><span id="PSI_T_I">-</span></td><td><progress id="PSI_I" max="100" value="0"></progress></td></tr>
-            <tr><td>心情指数</td><td><span id="PSI_T_S">-</span></td><td><progress id="PSI_S" max="100" value="0"></progress></td></tr>
-            <tr><td>体力指数</td><td><span id="PSI_T_P">-</span></td><td><progress id="PSI_P" max="100" value="0"></progress></td></tr>
-          </table>
+        <div id="yulu">
+          <h2>宠物语录</h2>
+          <ul id="content"></ul>
         </div>
         <hr/>
         OPet <span id="opet_version">-</span> &gt; <a href="about.html">软件信息</a>
       </div>
     </div>
+    <footer id="_loadjs">
+      <script>load_plugins();</script>
+    </footer>
     <script>
       $("#pet_normal").src=pet.imgs.default;
       $("#pet_name").innerText=pet.name;
@@ -48,7 +44,6 @@
       $("#pet_click_count").innerText=localStorage.getItem("pet_click_count");
       $("#spend_with_pet").innerText=localStorage.getItem("spend_with_pet")+" 小时";
       $("#opet_version").innerText=opet.version;
-      loadpsi();
       for(var a=0;a<dict.length;a++){
         var x=document.createElement('li');
         if(typeof(dict[a])=="object"){x.innerText=dict[a].content;}

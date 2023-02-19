@@ -32,7 +32,7 @@ config_pet_button=[ // 宠物按钮配置
   {label:"拖拽移动",id:"move",img:"ui/move.svg"}, // 建议保留ID，否则窗口很难移动。
   {label:"调整大小",id:"resize",img:"ui/resize.svg",exec:"rs();"},
   {label:"菜单",id:"petmenu",img:"ui/menu.svg",exec:"petmenu();"},
-  {label:"宠物状态信息",id:"about",img:"ui/about.svg",exec:"psiquery();",dblexec:"window.open('info.html');psiquery_close();"},
+  {label:"宠物状态信息",id:"about",img:"ui/about.svg",exec:"psiquery();",dblexec:"window.open('info.html');psiquery_close();"}, // 这个暂时依赖 psi 插件，未来会改
   // {label:"重新加载",id:"refresh",img:"ui/reload.svg",exec:"location.reload();"},
   // {label:"最小化",id:"minimize",img:"ui/minimize.svg",exec:"window.eAPI.minimize();"},
   // {label:"退出软件",id:"close",img:"ui/close.svg",exec:"window.close();"}
@@ -42,6 +42,9 @@ config_pet_button=[ // 宠物按钮配置
 // petmenu_close(); --> 关闭宠物菜单
 conf={ // 程序配置
   popup_delay:10000, // 对话框延时，单位毫秒
+  plugins:[ // 插件
+    "psi.js"
+  ]
 };
 /*==【鼠标行为】==*/
 function pet_click(){ // 点击
@@ -106,6 +109,16 @@ var pet_click_count=parseFloat(localStorage.getItem("pet_click_count"));
 if(pet_click_count==null||isNaN(pet_click_count)){
   pet_click_count=0;
   localStorage.setItem("pet_click_count",0);
+}
+function load_plugins(){
+  if(conf.plugins){
+    try{
+      for(var a=0;a<conf.plugins.length;a++){
+        loadjs(conf.plugins[a]);
+      }
+    }
+    catch(e){alert(e)}
+  }
 }
 function preload(){ // 预加载
   petmenu_load(config_petmenu); // 加载宠物菜单

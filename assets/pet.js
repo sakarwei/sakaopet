@@ -92,45 +92,9 @@ function zoomIn(){window.eAPI.zoomIn();}
 function zoomOut(){window.eAPI.zoomOut();}
 function zoomReset(){window.eAPI.zoomReset();}
 
-/*==【PSI】==*/
-function loadpsi(){ // 宠物属性加载（ 人体生物节律 拿来玩的 ）
-  try{
-    if(pet.birthday){ // 获取宠物生日信息（ conf.js 中调整）
-      var birth=new Date(pet.birthday); 
-      var today=new Date(); 
-      var delta1=today.getTime()-birth.getTime(); 
-      var delta2=delta1/(1000*3600*24);
-      var toshow=delta2.toFixed(0);
-      var pi=3.14159265;
-      var P=(Math.sin(toshow*(2*pi)/23)*50)+50;
-      var S=(Math.sin(toshow*(2*pi)/28)*50)+50;
-      var I=(Math.sin(toshow*(2*pi)/33)*50)+50;
-      $('#PSI_P').value=P;$('#PSI_T_P').innerText=parseInt(P);
-      $('#PSI_S').value=S;$('#PSI_T_S').innerText=parseInt(S);
-      $('#PSI_I').value=I;$('#PSI_T_I').innerText=parseInt(I);
-      return true;
-    }else{
-      return false;
-    }
-  }catch{
-    return false;
-  }
-}
-function psiquery(){ // 玩家查宠物属性的入口
-  if(loadpsi()){
-    if($("#psi").style.display=="block"){
-      psiquery_close();
-    }
-    else{
-      popup_close();
-      petmenu_close();
-      $("#psi").style.display="block";
-    }
-  }else{
-    alert("依赖属性未设定！");
-    psiquery_close();
-  }
-}
-function psiquery_close(){
-  $("#psi").style.display="none";
+/*==【加载插件】==*/
+function loadjs(src){
+  var x=document.createElement('script');
+  x.src="plugins/"+src;
+  $("#_loadjs").appendChild(x);
 }
