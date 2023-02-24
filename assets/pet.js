@@ -98,3 +98,4 @@ function loadjs(src){
   x.src="plugins/"+src;
   $("#_loadjs").appendChild(x);
 }
+  

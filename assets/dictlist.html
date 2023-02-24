@@ -21,8 +21,9 @@
     <script>
       for(var a=0;a<dict.length;a++){
         var x=document.createElement('li');
-        x.innerText=dict[a];
-        $("#content").appendChild(x);
+        if(typeof(dict[a])=="object"){x.innerText=dict[a].content;}
+        else{x.innerText=dict[a];}
+        $("#content").appendChild(x)
       }
     </script>
   </body>

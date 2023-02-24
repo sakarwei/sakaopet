@@ -23,8 +23,8 @@ config_petmenu=[ // 宠物菜单配置
   {label:"宠物信息",exec:`pet_info();petmenu_close();`},
   {label:"重新加载",exec:"location.reload();"},
   {label:"关于此软件",exec:`about();petmenu_close();`},
-  {label:"隐藏宠物",exec:`window.eAPI.minimize();petmenu_close();`},
-  {label:"退出宠物",exec:`window.close();petmenu_close();`},
+  // {label:"隐藏宠物",exec:`window.eAPI.minimize();petmenu_close();`},
+  // {label:"退出宠物",exec:`window.close();petmenu_close();`},
 
   // {label:"【须要显示的文本】",exec:"【点击后执行的 JS 代码】"},
 ]
@@ -33,9 +33,9 @@ config_pet_button=[ // 宠物按钮配置
   {label:"调整大小",id:"resize",img:"ui/resize.svg",exec:"rs();"},
   {label:"菜单",id:"petmenu",img:"ui/menu.svg",exec:"petmenu();"},
   {label:"宠物状态信息",id:"about",img:"ui/about.svg",exec:"psiquery();",dblexec:"window.open('info.html');psiquery_close();"}, // 这个暂时依赖 psi 插件，未来会改
-  // {label:"重新加载",id:"refresh",img:"ui/reload.svg",exec:"location.reload();"},
-  // {label:"最小化",id:"minimize",img:"ui/minimize.svg",exec:"window.eAPI.minimize();"},
-  // {label:"退出软件",id:"close",img:"ui/close.svg",exec:"window.close();"}
+  {label:"重新加载",id:"refresh",img:"ui/reload.svg",exec:"location.reload();"},
+  {label:"最小化",id:"minimize",img:"ui/minimize.svg",exec:"window.eAPI.minimize();"},
+  {label:"退出软件",id:"close",img:"ui/close.svg",exec:"window.close();"}
   
   // {label:"【须要显示的文本】",img:"【图标路径】",exec:"【点击后执行的 JS 代码】",dblexec:"【双击后运行的 JS 代码】",Rexec:"【右键点击运行的 JS 代码】"},
 ]
