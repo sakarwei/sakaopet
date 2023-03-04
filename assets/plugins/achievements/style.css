@@ -1,0 +1,7 @@
+html{height:100%;}
+body{font-family:'HarmonyOS Sans SC','Noto Sans CJK SC','微软雅黑','宋体','Simsun';height:-webkit-fill-available;margin:0;}
+div.window{border-radius:6px;background:#eef;height:100%;overflow:hidden;}
+div.titlebar{text-align:right;display:flex;padding:6px;user-select:none;}
+div.titlebar span{-webkit-app-region:drag;text-align:left;width:-webkit-fill-available;}
+div.titlebar button{float:right;border:none;background:transparent;width:4em;}
+div.titlebar button:hover{background:#07f8;}

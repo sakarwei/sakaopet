@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link href="style.css" rel="stylesheet"/>
+    <meta charset="UTF-8"/>
+    <title>OPet 成就</title>
+  </head>
+  <body>
+    <div class="window">
+      <div class="titlebar">
+        <span>OPet 成就</span>
+        <button class="R" title="刷新窗口" onclick="location.reload()">刷新</button>
+        <button class="C" title="关闭窗口" onclick="window.close();">关闭</button>
+      </div>
+      <div class="main">
+        <ul></ul>
+      </div>
+    </div>
+    <script>
+      var pet_achievements=JSON.parse(localStorage.getItem("pet_achievements"));
+      if(pet_achievements==null){
+        pet_achievements=[];
+        localStorage.setItem("pet_achievements",JSON.stringify(pet_achievements));
+      }
+      target=document.querySelector("ul");
+      for(var a=0;a<pet_achievements.length;a++){
+        var x=document.createElement("li");
+        x.innerText=pet_achievements[a]["n"]+"（获得时间："+pet_achievements[a]["t"]+"）";
+        document.querySelector("ul").appendChild(x);
+      }
+    </script>
+  </body>
+</html>

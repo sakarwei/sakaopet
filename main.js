@@ -7,6 +7,7 @@ const createWindow = () => {
     height: 220,
     frame: false,
     transparent: true,
+    fullscreenable: false,
     webPreferences: false,
     useContentSize: true,
     resizable: false,

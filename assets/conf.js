@@ -1,7 +1,8 @@
 pet={ // 宠物配置
   name:"OPet", // 宠物名称
+  description: "OPet example", // 宠物描述
   birthday:"2020/3/1", // 宠物生日，显示宠物属性需要。
-  master:"OPet Example", // 宠物对主人的称呼
+  master:"Master", // 宠物对主人的称呼
   master_birthday:"2023/2/4", // 主人生日
   imgs:{
     default:"pet/normal.svg", // 默认形象（不管他、不逗他、不放鼠标他身上的时候）
@@ -43,7 +44,8 @@ config_pet_button=[ // 宠物按钮配置
 conf={ // 程序配置
   popup_delay:10000, // 对话框延时，单位毫秒
   plugins:[ // 插件
-    "psi.js"
+    "psi.js",
+    "achievements.js" // 成就插件
   ]
 };
 /*==【鼠标行为】==*/
