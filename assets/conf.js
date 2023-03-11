@@ -33,7 +33,7 @@ config_pet_button=[ // 宠物按钮配置
   {label:"拖拽移动",id:"move",img:"ui/move.svg"}, // 建议保留ID，否则窗口很难移动。
   {label:"调整大小",id:"resize",img:"ui/resize.svg",exec:"rs();"},
   {label:"菜单",id:"petmenu",img:"ui/menu.svg",exec:"petmenu();"},
-  {label:"宠物状态信息",id:"about",img:"ui/about.svg",exec:"psiquery();",dblexec:"window.open('info.html');psiquery_close();"}, // 这个暂时依赖 psi 插件，未来会改
+  {label:"宠物状态信息",id:"about",img:"ui/about.svg",exec:"psiquery();",dblexec:"window.open('winframe.html');psiquery_close();"}, // 这个暂时依赖 psi 插件，未来会改
   {label:"重新加载",id:"refresh",img:"ui/reload.svg",exec:"location.reload();"},
   {label:"最小化",id:"minimize",img:"ui/minimize.svg",exec:"window.eAPI.minimize();"},
   {label:"退出软件",id:"close",img:"ui/close.svg",exec:"window.close();"}
@@ -45,9 +45,15 @@ conf={ // 程序配置
   popup_delay:10000, // 对话框延时，单位毫秒
   plugins:[ // 插件
     "psi.js",
-    "achievements.js" // 成就插件
+    "achievements.js" // 成就插件，正在开发
   ]
 };
+config_win_default="about.html"
+config_win_tabs=[ // 软件窗口左侧显示的标签页
+  {label:"宠物信息",id:"pet_info",exec:"$('iframe').src='info.html'"},
+  {label:"关于此软件",id:"pet_info",exec:"$('iframe').src='about.html'"},
+]
+
 /*==【鼠标行为】==*/
 function pet_click(){ // 点击
   var target=随机数(0,(dict.length-1));

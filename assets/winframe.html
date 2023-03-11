@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title></title>
+    <link href="ui/winframe.css" rel="stylesheet">
+    <meta charset="utf-8"/>
+    <script src="conf.js"></script>
+  </head>
+  <body>
+    <div id="topbar">
+      <img id="drag" src="app_icon.svg"></img><text id="title" draggable="false">OPet</text>
+      <button id="close" onclick="window.close();">关闭</button>
+      <button id="refresh" onclick="location.reload();">刷新</button>
+    </div>
+    <div id="main">
+      <div id="tabs">
+      </div>
+      <div id="page">
+        <iframe src=""></iframe>
+      </div>
+    </div>
+    <script src="winframe.js"></script>
+  </body>
+</html>

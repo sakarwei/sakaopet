@@ -4,13 +4,13 @@ function 随机数(小,大){
   return parseInt(Math.random()*(大-小+1)+小,10);
 }
 function about(){
-  window.open("about.html");
+  window.open("winframe.html?target=about");
 }
 function help(){
-  window.open("help.html");
+  window.open("winframe.html?target=help");
 }
 function info(){
-  window.open('info.html');
+  window.open("winframe.html?target=info");
 }
 function petload(target){ // 加载宠物形象
   $("#pet").src=target;

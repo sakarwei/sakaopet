@@ -7,7 +7,7 @@ div.titlebar span{-webkit-app-region:drag;text-align:left;width:-webkit-fill-ava
 div.titlebar button{float:right;border:none;background:transparent;}
 div.titlebar button:hover{background:#07f8;}
 div.titlebar button img{height:16px;width:16px;}
-div.main{position:fixed;top:42px;left:16px;right:16px;bottom:8px;overflow:auto;}
+div.main{position:fixed;top:8px;left:16px;right:16px;bottom:8px;overflow:auto;}
 div.main button{background:linear-gradient(#ccf 50%,#aaf 50%);border:none;padding:5px;min-width:50px;border-radius:5px;}
 div.main button:hover{background:linear-gradient(#fe6 50%,#fd3 50%);}
 a{color:#00f;}
