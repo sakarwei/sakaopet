@@ -15,6 +15,7 @@ div#topbar span#drag{color:#fff8;font-size:2em;}
 div#topbar text#title{background:linear-gradient(#aaf 50%,#ccf);color:#000;}
 button#refresh{background:linear-gradient(#0b0 50%,#0c0 50%);color:#fff;}
 button#close{background:linear-gradient(#f00 50%,#f44 50%);color:#fff;}
+div#topbar button{font-size:16px;}div#tabs button{font-size:16px;}
 div#tabs button{background:linear-gradient(90deg,#aaf 50%,#ccf 50%);color:#000;}
 div#tabs button:hover{background:linear-gradient(90deg,#fe6 50%,#fd3 50%);}
 div#page{background:#eef;border:1px solid #000;border-radius:8px;}

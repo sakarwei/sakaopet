@@ -16,5 +16,5 @@ function get_achievements(name,time){ // 赋予成就信息
   console.log(pet_achievements);
 }
 function Aquery_open(){ // 打开成就窗口
-  window.open("plugins/achievements/index.html");
+  window.open("winframe.html?target=plugins/achievements/index");
 }

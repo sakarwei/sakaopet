@@ -10,7 +10,7 @@
     <div id="topbar">
       <img id="drag" src="app_icon.svg"></img><text id="title" draggable="false">OPet</text>
       <button id="close" onclick="window.close();">关闭</button>
-      <button id="refresh" onclick="location.reload();">刷新</button>
+      <button id="refresh" onclick="$('iframe').src=$('iframe').src">刷新</button>
     </div>
     <div id="main">
       <div id="tabs">

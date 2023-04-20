@@ -17,7 +17,7 @@ function petload(target){ // 加载宠物形象
 }
 /*==【行为】==*/
 function popup(content,close_button="关闭"){ // 讲话气泡开启（content为内容）
-  petmenu_close();psiquery_close();
+  petmenu_close();
   try{clearTimeout(timer)}catch{};
   $("#pop").style.display="block";
   $("#pop_content").innerText=content;
@@ -52,7 +52,6 @@ function petmenu(){ // 宠物菜单
   }
   else{
     popup_close();
-    psiquery_close();
     $("#menu").style.display="block";
   }
 }

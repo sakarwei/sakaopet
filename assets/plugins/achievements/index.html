@@ -1,33 +1,41 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <link href="style.css" rel="stylesheet"/>
     <meta charset="UTF-8"/>
     <title>OPet 成就</title>
+    <script src="list.js"></script>
+    <link href="ui.css" rel="stylesheet"/>
   </head>
   <body>
     <div class="window">
-      <div class="titlebar">
-        <span>OPet 成就</span>
-        <button class="R" title="刷新窗口" onclick="location.reload()">刷新</button>
-        <button class="C" title="关闭窗口" onclick="window.close();">关闭</button>
-      </div>
-      <div class="main">
-        <ul></ul>
+      <div id="main">
+
       </div>
     </div>
     <script>
+      // 获取成就信息
       var pet_achievements=JSON.parse(localStorage.getItem("pet_achievements"));
       if(pet_achievements==null){
         pet_achievements=[];
         localStorage.setItem("pet_achievements",JSON.stringify(pet_achievements));
       }
-      target=document.querySelector("ul");
-      for(var a=0;a<pet_achievements.length;a++){
-        var x=document.createElement("li");
-        x.innerText=pet_achievements[a]["n"]+"（获得时间："+pet_achievements[a]["t"]+"）";
-        document.querySelector("ul").appendChild(x);
+      // 读取成就列表
+      for(var a=0;a<achievements_list.length;a++){
+        var div=document.createElement('div');
+        var img=document.createElement('img');
+        var span=document.createElement('span');
+        div.setAttribute("class","ac");
+        img.src=achievements_list[a].img;
+        img.id=achievements_list[a].name;
+        span.innerText=achievements_list[a].name;
+        div.appendChild(img);
+        div.appendChild(span);
+        document.querySelector('#main').appendChild(div);
       }
+      // 点亮已获得成就
+      for(var i=0;i<pet_achievements.length;i++){
+        document.querySelector("img#"+pet_achievements[i].n).style.filter="none";
+      } 
     </script>
   </body>
 </html>

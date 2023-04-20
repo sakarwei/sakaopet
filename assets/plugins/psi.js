@@ -1,4 +1,3 @@
-// 暂时的宠物状态信息方案：人体生物节律
 /*==【PSI】==*/
 function loadpsi_preload(){
   var psidiv=document.createElement("div")
@@ -8,12 +7,18 @@ function loadpsi_preload(){
     智力指数：<span id="PSI_T_I">-</span><progress id="PSI_I" max="100" value="0"></progress><br/>
     心情指数：<span id="PSI_T_S">-</span><progress id="PSI_S" max="100" value="0"></progress><br/>
     体力指数：<span id="PSI_T_P">-</span><progress id="PSI_P" max="100" value="0"></progress><br/>
+    <center><button onclick='psiquery_close();'>关闭</button></center>
     `
+    // 菜单添加项
+    var item=document.createElement("button");
+    item.onclick=new Function("psiquery()");
+    item.innerText="查看宠物的 PSI 状态";
+    $('#menu').appendChild(item);
     $("#petdiv").appendChild(psidiv);
     return;
   }else if($(".main")){ // 在信息窗口
     psidiv.innerHTML=`
-    <h2>宠物状态信息</h2>
+    <h2>宠物 PSI 状态信息</h2>
     <table>
       <tr><td>智力指数</td><td><span id="PSI_T_I">-</span></td><td><progress id="PSI_I" max="100" value="0"></progress></td></tr>
       <tr><td>心情指数</td><td><span id="PSI_T_S">-</span></td><td><progress id="PSI_S" max="100" value="0"></progress></td></tr>
