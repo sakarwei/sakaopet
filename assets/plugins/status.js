@@ -32,6 +32,10 @@ stat.饥饿.add=new Function(`
     stat.饥饿.current=1000;
   }
   localStorage.setItem("status_饥饿值",stat.饥饿.current);
+  if(pet.imgs.eating){petload(pet.imgs.eating);}
+  facelocked=true;
+  setTimeout('facelocked=false',30000);
+  setTimeout('petload(pet.imgs.default)',60000);
   petmenu_close();
 `);
 
@@ -52,6 +56,10 @@ stat.清洁.add=new Function(`
     stat.清洁.current=1000;
   }
   localStorage.setItem("status_清洁值",stat.清洁.current);
+  if(pet.imgs.bathing){petload(pet.imgs.bathing);}
+  facelocked=true;
+  setTimeout('facelocked=false',30000);
+  setTimeout('petload(pet.imgs.default)',60000);
   petmenu_close();
 `);
 

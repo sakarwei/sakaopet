@@ -1,4 +1,5 @@
 /*==【基础】==*/
+facelocked=false;
 function $(t){return document.querySelector(t);}
 function 随机数(小,大){
   return parseInt(Math.random()*(大-小+1)+小,10);
@@ -13,6 +14,7 @@ function info(){
   window.open("winframe.html?target=info");
 }
 function petload(target){ // 加载宠物形象
+  if(facelocked){return;}
   $("#pet").src=target;
 }
 /*==【行为】==*/
