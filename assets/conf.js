@@ -43,8 +43,23 @@ conf={ // 程序配置
   plugins:[ // 插件
     // "psi.js", // PSI
     "achievements.js", // 成就插件，正在开发
-    "status.js", // 新状态值，想玩的可以把*最*前面的一个双斜杠“//”删掉。
-  ]
+    "status.js", // 新状态值
+  ],
+  stat:{ // 状态值插件相关配置
+    心情值最大值: 1000,
+    心情值减少延迟: 600000, // 10 分钟
+    心情值减少值: 100,
+    心情值增加值: 100,
+    清洁值最大值: 1000,
+    清洁值减少延迟: 1200000, // 20 分钟
+    清洁值减少值: 100,
+    清洁值增加值: 100,
+    饥饿值最大值: 1000,
+    饥饿值减少延迟: 1800000, // 30 分钟
+    饥饿值减少值: 100,
+    饥饿值增加值: 100,
+    更新延时: 10000
+  }
 };
 config_win_default="about.html"
 config_win_tabs=[ // 软件窗口左侧显示的标签页
@@ -85,7 +100,7 @@ function weather(){ // 天气，有技术没来源。
   // window.open("weather.html");
 }
 function pet_info(){
-  window.open("info.html");
+  window.open("winframe.html?target=info");
 }
 function isbirthday(){ // 判断今天是不是主人的生日。如果是的话，显示给主人的祝福消息。
   try{

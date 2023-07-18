@@ -4,11 +4,11 @@ div#topbar div.right{text-align:right;}
 div#drag{position:absolute;-webkit-app-region:drag;top:0;left:0;width:100%;height:31px;z-index:1;}
 div#topbar span#drag,div#topbar img#drag{-webkit-app-region:drag;display:inline-block;background:transparent;position:absolute;height:31px;width:31px;line-height:31px;text-align:center;}
 div#topbar text#title{display:inline-block;height:31px;margin-left:39px;max-width:50%;text-align:center;border-radius:5px 5px 0 0;padding:0 10px;line-height:31px;overflow:hidden;}
-div#topbar button{height:31px;-webkit-app-region:no-drag;width:56px;margin-right:4px;margin-bottom:0;float:right;border-radius:5px 5px 0 0;border:none;}
+div#topbar img.btn{height:31px;-webkit-app-region:no-drag;width:25px;float:right;margin-right:9px;}
 div#tabs button{width:31px;padding-top:8px;margin:3px 0;padding:10px 3px;border:none;border-radius:5px 0 0 5px;}
 div#main{display:flex;position:fixed;top:31px;left:0;right:0;bottom:0;}
 div#tabs{width:31px;}
-div#page{width:-webkit-fill-available;height:-webkit-fill-available}
+div#page{width:-webkit-fill-available;height:-webkit-fill-available;}
 iframe{width:100%;height:100%;border:none;}
 /* 此注释以上是布局部分，以下是外观部分 */
 div#topbar span#drag{color:#fff8;font-size:2em;}
