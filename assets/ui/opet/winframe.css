@@ -1,4 +1,4 @@
-html,body{height:-webkit-fill-available;padding:0;margin:0;font-family:'HarmonyOS Sans SC',sans-serif;}
+html,body{height:-webkit-fill-available;padding:0;margin:0;font-family:'HarmonyOS Sans SC','sans-serif';}
 div#topbar{width:100%;height:31px;background:transparent;user-select:none;}
 div#topbar div.right{text-align:right;}
 div#drag{position:absolute;-webkit-app-region:drag;top:0;left:0;width:100%;height:31px;z-index:1;}
@@ -14,7 +14,6 @@ div#tabs::-webkit-scrollbar{display:none;}
 /* 此注释以上是布局部分，以下是外观部分 */
 div#topbar span#drag{color:#fff8;font-size:2em;}
 div#topbar text#title{background:linear-gradient(#aaf 50%,#ccf);color:#000;}
-div#topbar img{image-rendering:pixelated;}
 div#topbar img:hover{filter:brightness(1.9);}
 /* button#refresh{background:linear-gradient(#0b0 50%,#0c0 50%);color:#fff;} */
 /* button#close{background:linear-gradient(#f00 50%,#f44 50%);color:#fff;} */

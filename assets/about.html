@@ -1,32 +1,32 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <link href="ui/ui.css" rel="stylesheet"/>
-    <meta charset="UTF-8"/>
-    <title>OPet 软件信息</title>
-    <script src="ui.js"></script>
-    <script src="appinfo.js"></script>
-  </head>
-  <body>
-    <div class="window">
-      <div class="main">
-        <center>
-          <br/><br/>
-          <img src="app_icon.svg" style="height:3em;width:3em;"/><br/>
-          <h1>OPet</h1>
-          <span>electron 制作的简单电子宠物</span><br/>
-          作者：<span id="opet_author">-</span><br/>
-          版本：<span id="opet_version">-</span><br/>
-          更新时间：<span id="opet_date">-</span><br/>
-          项目地址：<a onclick="window.open('https://gitee.com/Jeun1358/opet')">https://gitee.com/Jeun1358/opet</a><br/><br/>
-          <button onclick="window.open('https://gitee.com/Jeun1358/opet/blob/master/CHANGELOG.md')">更新日志</button>
-        </center>
-      </div>
-    </div>
-    <script>
-      $("#opet_version").innerText=opet.version;
-      $("#opet_author").innerText=opet.author;
-      $("#opet_date").innerText=opet.date;
-    </script>
-  </body>
+	<head>
+		<link href="ui/ui.css" rel="stylesheet"/>
+		<meta charset="UTF-8"/>
+		<title>SakaOPet 软件信息</title>
+		<script src="ui.js"></script>
+		<script src="appinfo.js"></script>
+	</head>
+	<body>
+		<div class="window">
+			<div class="main">
+				<center>
+					<br/><br/>
+					<img src="app_icon.svg" style="height:3em;width:3em;"/><br/>
+					<h1>SakaOPet</h1>
+					<span>electron 制作的简单电子宠物</span><br/>
+					作者：<span id="opet_author">-</span><br/>
+					版本：<span id="opet_version">-</span><br/>
+					更新时间：<span id="opet_date">-</span><br/>
+					项目地址：<a onclick="window.open('https://gitee.com/sakarwei/sakaopet')">https://gitee.com/sakarwei/sakaopet</a><br/><br/>
+					<button onclick="window.open('https://gitee.com/sakarwei/sakaopet/blob/master/CHANGELOG.md')">更新日志</button>
+				</center>
+			</div>
+		</div>
+		<script>
+			$("#opet_version").innerText=opet.version;
+			$("#opet_author").innerText=opet.author;
+			$("#opet_date").innerText=opet.date;
+		</script>
+	</body>
 </html>

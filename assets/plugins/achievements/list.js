@@ -1,6 +1,9 @@
 achievements_list=[
-  {name:"夜猫子",img:"object.svg"},
-  {name:"友谊的小船",img:"object.svg"},
-  {name:"友谊的巨轮",img:"object.svg"},
-  {name:"生日快乐",img:"object.svg"},
+	{n:"友谊的小船",i:"object.svg",d:"点击宠物100下"},
+	{n:"友谊的巨轮",i:"object.svg",d:"点击宠物10000下"},
+	{n:"陪伴一",i:"object.svg",d:"陪宠物的时间超过24小时"},
+	{n:"陪伴二",i:"object.svg",d:"陪宠物的时间超过8760小时（365天）"},
+	{n:"夜猫子",i:"object.svg",d:"在凌晨1:00~6:00时段与宠物互动",},
+	{n:"生日快乐",i:"object.svg",d:"在主人生日当天内与宠物互动",},
+	{n:"测试彩蛋",i:"object.svg",d:"不知道"},
 ]

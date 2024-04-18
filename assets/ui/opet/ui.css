@@ -13,4 +13,5 @@ div.main button:hover{background:linear-gradient(#fe6 50%,#fd3 50%);}
 a{color:#00f;}
 a:hover,a:active{color:#f00;}
 hr{border-top:1px solid #88f8;border-bottom:1px solid #bbf8;}
+button{font-family:'HarmonyOS Sans SC','sans-serif';}
 /* 一言难尽的 UI 外观…… */

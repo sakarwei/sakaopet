@@ -1,41 +1,41 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="UTF-8"/>
-    <title>OPet 成就</title>
-    <script src="list.js"></script>
-    <link href="ui.css" rel="stylesheet"/>
-  </head>
-  <body>
-    <div class="window">
-      <div id="main">
-
-      </div>
-    </div>
-    <script>
-      // 获取成就信息
-      var pet_achievements=JSON.parse(localStorage.getItem("pet_achievements"));
-      if(pet_achievements==null){
-        pet_achievements=[];
-        localStorage.setItem("pet_achievements",JSON.stringify(pet_achievements));
-      }
-      // 读取成就列表
-      for(var a=0;a<achievements_list.length;a++){
-        var div=document.createElement('div');
-        var img=document.createElement('img');
-        var span=document.createElement('span');
-        div.setAttribute("class","ac");
-        img.src=achievements_list[a].img;
-        img.id=achievements_list[a].name;
-        span.innerText=achievements_list[a].name;
-        div.appendChild(img);
-        div.appendChild(span);
-        document.querySelector('#main').appendChild(div);
-      }
-      // 点亮已获得成就
-      for(var i=0;i<pet_achievements.length;i++){
-        document.querySelector("img#"+pet_achievements[i].n).style.filter="none";
-      } 
-    </script>
-  </body>
+	<head>
+		<meta charset="UTF-8"/>
+		<title>OPet 成就</title>
+		<script src="list.js"></script>
+		<link href="ui.css" rel="stylesheet"/>
+	</head>
+	<body>
+		<div class="window">
+			<div id="main">
+			</div>
+		</div>
+		<script>
+			// 获取成就信息
+			var pet_achievements=JSON.parse(localStorage.getItem("pet_achievements"));
+			if(pet_achievements==null){
+				pet_achievements=[];
+				localStorage.setItem("pet_achievements",JSON.stringify(pet_achievements));
+			}
+			// 读取成就列表
+			for(var a=0;a<achievements_list.length;a++){
+				var div=document.createElement('div');
+				var img=document.createElement('img');
+				var span=document.createElement('span');
+				div.setAttribute("class","ac");
+				div.setAttribute("title",achievements_list[a].d);
+				img.src=achievements_list[a].i;
+				img.id=achievements_list[a].n;
+				span.innerText=achievements_list[a].n;
+				div.appendChild(img);
+				div.appendChild(span);
+				document.querySelector('#main').appendChild(div);
+			}
+			// 点亮已获得成就
+			for(var i=0;i<pet_achievements.length;i++){
+				document.querySelector("img#"+pet_achievements[i].n).style.filter="none";
+			} 
+		</script>
+	</body>
 </html>
