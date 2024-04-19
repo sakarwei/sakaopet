@@ -1,9 +1,9 @@
 achievements_list=[
-	{n:"友谊的小船",i:"object.svg",d:"点击宠物100下"},
-	{n:"友谊的巨轮",i:"object.svg",d:"点击宠物10000下"},
-	{n:"陪伴一",i:"object.svg",d:"陪宠物的时间超过24小时"},
-	{n:"陪伴二",i:"object.svg",d:"陪宠物的时间超过8760小时（365天）"},
-	{n:"夜猫子",i:"object.svg",d:"在凌晨1:00~6:00时段与宠物互动",},
-	{n:"生日快乐",i:"object.svg",d:"在主人生日当天内与宠物互动",},
-	{n:"测试彩蛋",i:"object.svg",d:"不知道"},
+	{n:"友谊的小船",id:"oisakapet_friendboat",i:"friendboat.png",d:"点击宠物100下"},
+	{n:"友谊的巨轮",id:"oisakapet_friendship",i:"friendship.png",d:"点击宠物10000下"},
+	{n:"最开始成为主人的时候",id:"oisakapet_owner_at_first",i:"together.png",d:"陪宠物的时间超过24小时"},
+	{n:"陪伴是最长情的告白",id:"oisakapet_life_together",i:"together2.png",d:"陪宠物的时间超过8760小时（365天）"},
+	{n:"夜猫子",i:"nightcat.png",id:"oisakapet_stay_up_late",d:"在凌晨1:00~6:00时段与宠物互动",},
+	{n:"生日快乐",i:"cakepiece.png",id:"oisakapet_happy_birthday",d:"在主人生日当天内与宠物互动",},
+	{n:"测试彩蛋",i:"unknow.png",id:"oisakapet_ha",d:"不知道"},
 ]

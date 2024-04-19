@@ -16,7 +16,7 @@ function info(){
 }
 function petload(target){ // 加载宠物形象
 	if(facelocked){return;}
-	$("#pet").src=target;
+	$("#pet").src="pet/"+conf.petroot+"/"+target;
 }
 /*==【行为】==*/
 function popup(content){ // 讲话气泡开启（content为内容）
@@ -92,7 +92,6 @@ function petitems_load(cfg){ // 加载宠物物品菜单
 			item.setAttribute("drag_id",a);
 			$('#items').appendChild(item);
 			item.ondragstart=function(e){setDrag(e.target.attributes["drag_id"].value);}
-			console.log(item)
 		}
 	}
 	catch(e){alert('物品菜单配置出错：\n'+e);}
@@ -100,7 +99,6 @@ function petitems_load(cfg){ // 加载宠物物品菜单
 function setDrag(id){
 	if(id){dragged_id=id;}
 	else{dragged_id=null;}
-	console.log(dragged_id)
 }
 /*=【按钮】=*/
 function petbtn_load(cfg){
@@ -124,9 +122,13 @@ function zoomOut(){window.eAPI.zoomOut();}
 function zoomReset(){window.eAPI.zoomReset();}
 
 /*==【加载插件】==*/
-function loadjs(src){
+function loadjs(src,type="plugins"){
 	var x=document.createElement('script');
-	x.src="plugins/"+src;
+	if(type=="pet"){
+		x.src="pet/"+src;
+	}else{
+		x.src="plugins/"+src;
+	}
 	$("#_loadjs").appendChild(x);
 }
 function final(){ // 接受拖拽物品

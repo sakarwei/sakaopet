@@ -8,8 +8,10 @@
 	</head>
 	<body>
 		<div class="window">
+			<center>
 			<div id="main">
 			</div>
+			</center>
 		</div>
 		<script>
 			// 获取成就信息
@@ -26,7 +28,8 @@
 				div.setAttribute("class","ac");
 				div.setAttribute("title",achievements_list[a].d);
 				img.src=achievements_list[a].i;
-				img.id=achievements_list[a].n;
+				img.name=achievements_list[a].n;
+				img.id=achievements_list[a].id;
 				span.innerText=achievements_list[a].n;
 				div.appendChild(img);
 				div.appendChild(span);
@@ -34,7 +37,7 @@
 			}
 			// 点亮已获得成就
 			for(var i=0;i<pet_achievements.length;i++){
-				document.querySelector("img#"+pet_achievements[i].n).style.filter="none";
+				document.querySelector("img#"+pet_achievements[i].id).style.filter="none";
 			} 
 		</script>
 	</body>

@@ -3,11 +3,7 @@
 	<head>
 		<link href="ui/ui.css" rel="stylesheet"/>
 		<meta charset="UTF-8"/>
-		<title>OPet 宠物信息</title>
-		<script src="conf.js"></script>
-		<script src="ui.js"></script>
-		<script src="pet.js"></script>
-		<script src="appinfo.js"></script>
+		<title>Saka OPet 宠物信息</title>
 		<style>#pet_normal{height:90px;width:90px;}#pet_normal,table{display:inline-block}td{padding-left:3px;padding-right:3px;}</style>
 	</head>
 	<body>
@@ -26,25 +22,31 @@
 					<ul id="content"></ul>
 				</div>
 				<hr/>
-				OPet <span id="opet_version">-</span>
+				Saka OPet <span id="opet_version">-</span>
 			</div>
 		</div>
-		<footer id="_loadjs">
-			<script>load_plugins();</script>
-		</footer>
+		<footer id="_loadjs"></footer>
+		<script src="pet.js"></script>
+		<script src="conf.js"></script>
+		<script>loadjs(conf.petroot+"/"+conf.petconf,"pet");</script>
+		<script src="ui.js"></script>
+		<script src="appinfo.js"></script>
 		<script>
-			$("#pet_normal").src=pet.imgs.default;
-			$("#pet_name").innerText=pet.name;
-			$("#pet_birthday").innerText=pet.birthday;
-			$("#pet_click_count").innerText=localStorage.getItem("pet_click_count");
-			$("#spend_with_pet").innerText=localStorage.getItem("spend_with_pet")+" 小时";
-			$("#opet_version").innerText=opet.version;
-			for(var a=0;a<dict.length;a++){
-				var x=document.createElement('li');
-				if(typeof(dict[a])=="object"){x.innerText=dict[a].content;}
-				else{x.innerText=dict[a];}
-				$("#content").appendChild(x)
-			}
+			function winframe_preload(){
+				$("#pet_normal").src="pet/"+conf.petroot+"/"+pet.imgs.default;
+				$("#pet_name").innerText=pet.name;
+				$("#pet_birthday").innerText=pet.birthday;
+				$("#pet_click_count").innerText=localStorage.getItem("pet_click_count");
+				$("#spend_with_pet").innerText=localStorage.getItem("spend_with_pet")+" 小时";
+				$("#opet_version").innerText=opet.version;
+				for(var a=0;a<dict.length;a++){
+					var x=document.createElement('li');
+					if(typeof(dict[a])=="object"){x.innerText=dict[a].content;}
+					else{x.innerText=dict[a];}
+					$("#content").appendChild(x)
+				}
+				load_plugins();
+			};
 		</script>
 	</body>
 </html>

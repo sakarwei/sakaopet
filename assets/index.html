@@ -1,32 +1,33 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
-  <head>
-    <title>OPet</title>
-    <meta name="viewport" charset="utf-8" content="width=device-width,initial-scale=1,maximum-scale=1.0,minimum-scale=1.0"/>
-    <link href="ui/style.css" rel="stylesheet"/>
-    <script src="ui.js"></script>
-    <script src="conf.js"></script>
-    <script src="pet.js"></script>
-  </head>
-  <body>
-    <div id="petdiv">
-      <img id="pet"/>
-      <div id="toolbar">
-      </div>
-    </div>
-    <div id="pop">
-      <span id="pop_content"></span>
-      <button id="pop_close" onclick="popup_close();">关闭</button>
-    </div>
-    <div id="menu"></div>
-    <div id="items"></div>
-    <div id="rs">
-      <span>内容缩放：</span>
-      <img title="放大" src="ui/zoomin.svg" onclick="zoomIn();"/>
-      <img title="缩小" src="ui/zoomout.svg" onclick="zoomOut();"/>
-      <img title="恢复" src="ui/zoomreset.svg" onclick="zoomReset();"/>
-    </div>
-    <script>preload();</script>
-    <footer id="_loadjs"><script>load_plugins();final();</script></footer>
-  </body>
+	<head>
+		<title>OPet</title>
+		<meta name="viewport" charset="utf-8" content="width=device-width,initial-scale=1,maximum-scale=1.0,minimum-scale=1.0"/>
+		<link href="ui/style.css" rel="stylesheet"/>
+	</head>
+	<body>
+		<div id="petdiv">
+			<img id="pet"/>
+			<div id="toolbar">
+			</div>
+		</div>
+		<div id="pop">
+			<span id="pop_content"></span>
+			<button id="pop_close" onclick="popup_close();">关闭</button>
+		</div>
+		<div id="menu"></div>
+		<div id="items"></div>
+		<div id="rs">
+			<span>内容缩放：</span>
+			<img title="放大" src="ui/zoomin.svg" onclick="zoomIn();"/>
+			<img title="缩小" src="ui/zoomout.svg" onclick="zoomOut();"/>
+			<img title="恢复" src="ui/zoomreset.svg" onclick="zoomReset();"/>
+		</div>
+		<footer id="_loadjs"></footer>
+		<script src="pet.js"></script>
+		<script src="conf.js"></script>
+		<script>loadjs(conf.petroot+"/"+conf.petconf,"pet");</script>
+		
+		<script>load_plugins();final();</script>
+	</body>
 </html>

@@ -1,3 +1,5 @@
-div.ac{display:inline-grid;width:99px;place-items:center;text-align:center;background:#ddf;margin:5px;border-radius:10px;}
+div.ac{display:inline-grid;width:99px;place-items:center;text-align:center;border-radius:10px;margin:10px;}
 div.ac:hover{background:#ccf;}
-div.ac img{width:60px;height:60px;padding:10px;filter:grayscale(1)}
+div.ac img{width:60px;height:60px;padding:10px;filter:grayscale(1);}
+img{image-rendering:pixelated;}
+html,body,div.window,div#main{height:-webkit-fill-available;width:-webkit-fill-available;align-content:center;}

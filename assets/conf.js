@@ -1,34 +1,6 @@
-pet={
-	name:"DEMO",
-	birthday:"2024/4/18",
-	master: "DEMO",
-	master_birthday: "2023/2/1",
-	imgs:{
-		default:"pet/demo/normal.svg",
-		sleeping:"pet/demo/sleeping.svg",
-		hover:"pet/demo/smile.svg",
-	}
-};
-dict_eating=[
-	"众所周知，美食可以改善心情。",
-	"好吃好吃！"
-]
-dict_shower=[
-	"我爱洗澡皮肤好好～",
-	"全身都干净啦！"
-]
-dict=[
-	"你好",
-	{content:"很高兴认识你",button:"^_^"}
-];
-config_petmenu=[
-	{label:"帮助",exec:`help();petmenu_close();`},
-	{label:"宠物信息",exec:`pet_info();petmenu_close();`},
-	{label:"关于此软件",exec:`about();petmenu_close();`},
-]
-config_petitems=[
-]
 conf={
+	petconf:"conf.js",
+	petroot:"demo",
 	popup_delay:10000,
 	自动说话延时:30000,
 	特殊形象固定时长:8000,
@@ -135,10 +107,10 @@ if(pet_click_count==null||isNaN(pet_click_count)){
 function load_plugins(){
 	if(conf.plugins){
 		try{for(var a=0;a<conf.plugins.length;a++){loadjs(conf.plugins[a]);}}
-		catch(e){alert(e)}
+		catch(e){console.log(e)}
 	}
 }
-function preload(){ // 预加载
+function pet_preload(){ // 预加载
 	petmenu_load(config_petmenu); // 加载宠物菜单
 	petitems_load(config_petitems); // 加载宠物拖拽物品菜单
 	petbtn_load(config_pet_button); // 加载按钮
