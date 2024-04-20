@@ -4,7 +4,23 @@
 		<title></title>
 		<link href="ui/winframe.css" rel="stylesheet">
 		<meta charset="utf-8"/>
-		<script src="conf.js"></script>
+		<script src="common.js"></script>
+		<script>
+			function $(t){return document.querySelector(t)}
+			function wintabs_add(i){
+				var btn=document.createElement('button');
+				btn.id=i.id;
+				btn.innerText=i.label;
+				btn.onclick=new Function(`$("text#title").innerText="${i.label}";`+i.exec);
+				$('div#tabs').appendChild(btn);
+			}
+			function winframe_load_plugins(){
+				for(var a=0;a<conf.win_plugins.length;a++){
+					loadjs(conf.win_plugins[a]+"_win.js");
+				}
+				setTimeout(`wintabs_add({label:"关于此软件",id:"about",exec:"$('iframe').src='about.html'"})`,200)
+			}
+		</script>
 	</head>
 	<body>
 		<div id="topbar">
@@ -20,6 +36,9 @@
 				<iframe src=""></iframe>
 			</div>
 		</div>
+		<footer id="_loadjs"></footer>
+		<script src="conf.js"></script>
 		<script src="winframe.js"></script>
+		<script>winframe_load_plugins();</script>
 	</body>
 </html>

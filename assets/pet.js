@@ -1,10 +1,6 @@
 /*==【基础】==*/
 facelocked=false;
 dragged_id=null;
-function $(t){return document.querySelector(t);}
-function 随机数(小,大){
-	return parseInt(Math.random()*(大-小+1)+小,10);
-}
 function about(){
 	window.open("winframe.html?target=about");
 }
@@ -72,29 +68,35 @@ function petmenu_load(cfg){ // 加载宠物菜单
 	$('#menu').innerHTML="";
 	try{
 		for(var a=0;a<cfg.length;a++){
-			var item=document.createElement("button");
-			item.onclick=new Function(cfg[a].exec);
-			item.innerText=cfg[a].label;
-			$('#menu').appendChild(item);
+			petmenu_add(cfg[a]);
 		}
 	}
 	catch(e){alert('菜单配置出错：\n'+e);}
+}
+function petmenu_add(i){
+	var item=document.createElement("button");
+	item.onclick=i.exec;
+	item.innerText=i.label;
+	$('#menu').appendChild(item);
 }
 function petitems_load(cfg){ // 加载宠物物品菜单
 	$('#items').innerHTML="";
 	try{
 		for(var a=0;a<cfg.length;a++){
-			var item=document.createElement("img");
-			item.draggable=true;
-			item.src=cfg[a].src;
-			item.alt=cfg[a].label;
-			item.onclick=cfg[a].exec;
-			item.setAttribute("drag_id",a);
-			$('#items').appendChild(item);
-			item.ondragstart=function(e){setDrag(e.target.attributes["drag_id"].value);}
+			petitems_add(cfg[a],a);
 		}
 	}
 	catch(e){alert('物品菜单配置出错：\n'+e);}
+}
+function petitems_add(i,a=document.querySelectorAll("[drag_id]").length){
+	var item=document.createElement("img");
+	item.draggable=true;
+	item.src="pet/"+conf.petroot+"/"+i.src;
+	item.alt=i.label;
+	item.onclick=i.exec;
+	item.setAttribute("drag_id",a);
+	$('#items').appendChild(item);
+	item.ondragstart=function(e){setDrag(e.target.attributes["drag_id"].value);}
 }
 function setDrag(id){
 	if(id){dragged_id=id;}
@@ -122,14 +124,11 @@ function zoomOut(){window.eAPI.zoomOut();}
 function zoomReset(){window.eAPI.zoomReset();}
 
 /*==【加载插件】==*/
-function loadjs(src,type="plugins"){
-	var x=document.createElement('script');
-	if(type=="pet"){
-		x.src="pet/"+src;
-	}else{
-		x.src="plugins/"+src;
+function load_plugins(){
+	if(conf.plugins){
+		try{for(var a=0;a<conf.plugins.length;a++){loadjs(conf.plugins[a]+".js");}}
+		catch(e){console.log(e)}
 	}
-	$("#_loadjs").appendChild(x);
 }
 function final(){ // 接受拖拽物品
 	$("#pet").ondragenter=function(e){e.preventDefault();if(pet.imgs.curious){petload(pet.imgs.curious);}}

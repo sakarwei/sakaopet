@@ -1,16 +1,18 @@
 html{height:100%;}
-body{font-family:'HarmonyOS Sans SC','sans-serif';height:-webkit-fill-available;margin:0;}
+body{font-family:'Unifont';height:-webkit-fill-available;margin:0;}
 ul li{list-style-image:url("list.gif");}
-div.window{border-radius:6px;background:#eef;height:100%;overflow:hidden;}
+div.window{border-radius:6px;background:#ffe;height:100%;overflow:hidden;}
 div.titlebar{text-align:right;display:flex;padding:6px;background:linear-gradient(#aaf 50%,#ccf);user-select:none;}
 div.titlebar span{-webkit-app-region:drag;text-align:left;width:-webkit-fill-available;}
 div.titlebar button{float:right;border:none;background:transparent;}
 div.titlebar button:hover{background:#07f8;}
 div.titlebar button img{height:16px;width:16px;}
 div.main{position:fixed;top:8px;left:16px;right:16px;bottom:8px;overflow:auto;}
-div.main button{background:linear-gradient(#ccf 50%,#aaf 50%);border:none;padding:5px;min-width:50px;border-radius:5px;}
-div.main button:hover{background:linear-gradient(#fe6 50%,#fd3 50%);}
+div.main button{border:3px solid;border-image:url("border.png") 3;padding:5px;min-width:50px;background:transparent;font-family:'Unifont';font-size:16px;}
+div.main button:hover{background:#fe6;}
 a{color:#00f;}
 a:hover,a:active{color:#f00;}
-hr{border-top:1px solid #88f8;border-bottom:1px solid #bbf8;}
-/* 一言难尽的 UI 外观…… */
+hr{border:1px solid #fe6;}
+progress{-webkit-appearance:none;}
+::-webkit-progress-bar {background:transparent;border:2px solid #fe6;}
+::-webkit-progress-value {background-color: #fd0;}

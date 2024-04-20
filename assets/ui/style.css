@@ -1,5 +1,5 @@
 html{background-color:transparent;height:-webkit-fill-available;}
-body{background-color:transparent;overflow:hidden;user-select:none;text-align:-webkit-center;font-family:'HarmonyOS Sans SC','sans-serif';font-size:16px;}
+body{background-color:transparent;overflow:hidden;user-select:none;text-align:-webkit-center;font-family:'Unifont';font-size:16px;}
 img#pet{height:160px;width:160px;}
 #toolbar img,#rs img,#pop img,#psi img{height:22px;width:22px;background:transparent;}
 #toolbar img{padding-left:2px;padding-right:2px;image-rendering:pixelated;}
@@ -7,17 +7,17 @@ img#pet{height:160px;width:160px;}
 #toolbar img:hover,#rs img:hover,#pop img:hover{filter:brightness(1.9);}
 img{-webkit-user-drag:none;}
 #pop,#menu,#psi,#rs{display:none;}
-#pop,#menu,#psi,#rs{position:fixed;top:0;left:0;padding:3px;border:2px solid #ec6;background:#fdc;color:#000;border-radius:5px;width:-webkit-fill-available;}
+#pop,#menu,#psi,#rs{position:fixed;top:0;left:0;padding:3px;border:2px solid;border-image:url("border.png") 3;background:#fdc;color:#000;width:-webkit-fill-available;}
 #psi{text-align:left;}
 #pop{opacity:0.8;line-height:1.4em;user-select:all;}
 #rs{z-index:9;}
-#menu button{width:-webkit-fill-available;display:block;text-align:left;border:none;background:transparent;padding:3px;font-size:0.9em;}
-#menu button:hover{background:#07f;color:#fff;}
+#menu button{width:-webkit-fill-available;display:block;text-align:left;border:none;background:transparent;padding:3px;font-size:0.9em;font-size:16px;}
+#menu button:hover{background:#fd0;color:#000;}
 #petdiv{position:fixed;bottom:0;}
 #pop_content,#pop_close{display:block;user-select:none;}
-#pop_close{background:linear-gradient(#fd6 50%,#ec5 50%);image-rendering:pixelated;padding:2px;min-width:43px;border-radius:5px;}
-#pop_close:hover{background:linear-gradient(#fe6 50%,#fd3 50%);}
+#pop_close{background:#fdc;border:2px solid;border-image:url("border.png") 3;image-rendering:pixelated;padding:2px;min-width:43px;}
+#pop_close:hover{background:#fe6;}
 #items{float:right;position:fixed;right:0;top:0;display:grid;}
 #items img{height:22px;-webkit-user-drag:element;opacity:0.3;image-rendering:pixelated;}
 #items img:hover{opacity:0.8;}
-button{font-family:'HarmonyOS Sans SC','sans-serif';font-size:16px;border:none;}
+button{font-family:'Unifont';font-size:16px;border:none;}

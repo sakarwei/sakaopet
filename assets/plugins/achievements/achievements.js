@@ -45,14 +45,9 @@ function check(){ // 成就检查
 	}
 }
 
-if($('div#petdiv')){
-	try{ 
-// 		// 每点击一次就检查一次
-		$('img#pet').addEventListener("click",check);
-	}catch(e){
-		// console.log(e);
-	}
+if($('img#pet')){
+	try{ $('img#pet').addEventListener("click",check);} // 每点击一次就检查一次
+	catch(e){console.log(e);}
 }
 
-check()
-// 每次打开检查一次。
+check(); // 每次打开检查一次。

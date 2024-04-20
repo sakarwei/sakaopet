@@ -4,10 +4,12 @@ conf={
 	popup_delay:10000,
 	自动说话延时:30000,
 	特殊形象固定时长:8000,
-	plugins:[ // 插件
-	// "psi.js",
-	"achievements.js",
-	"status.js",
+	plugins:[ // 宠物界面插件
+		"achievements/achievements",
+		"status",
+	],
+	win_plugins:[ // 信息界面的插件
+		"achievements/achievements",
 	],
 	stat:{
 		心情值预设值: 1000,
@@ -40,8 +42,6 @@ config_pet_button=[ // 宠物按钮配置
 config_win_default="about.html"
 config_win_tabs=[ // 软件窗口左侧显示的标签页
 	{label:"宠物信息",id:"pet_info",exec:"$('iframe').src='info.html'"},
-	{label:"成就",id:"pet_info",exec:"$('iframe').src='plugins/achievements/index.html'"},
-	{label:"关于此软件",id:"pet_info",exec:"$('iframe').src='about.html'"},
 ]
 
 /*==【鼠标行为】==*/
@@ -70,7 +70,7 @@ function pet_Rclick(e){ // 鼠标右键宠物界面
 	e.preventDefault(); // 谨慎删除
 	petmenu(); // 默认是弹出宠物菜单
 }
-/*==【通用函数功能区】==*/
+/*==【自定义函数区】==*/
 function pet_info(){
 	window.open("winframe.html?target=info");
 }
@@ -86,29 +86,11 @@ function isbirthday(){
 		}
 	}catch{}
 }
-/*==【定时运行部分】==*/
-spend_with_pet=parseFloat(localStorage.getItem("spend_with_pet"));
-if(spend_with_pet==null||isNaN(spend_with_pet)){
-	spend_with_pet=0;
-	localStorage.setItem("spend_with_pet",0);
-}
-function spend_w_p(){
-	spend_with_pet=spend_with_pet+0.5;
-	localStorage.setItem("spend_with_pet",spend_with_pet);
-	console.log('+1')
-	setTimeout("spend_w_p();",1800000);
-}
 /*==【预加载】==*/
 var pet_click_count=parseFloat(localStorage.getItem("pet_click_count"));
 if(pet_click_count==null||isNaN(pet_click_count)){
 	pet_click_count=0;
 	localStorage.setItem("pet_click_count",0);
-}
-function load_plugins(){
-	if(conf.plugins){
-		try{for(var a=0;a<conf.plugins.length;a++){loadjs(conf.plugins[a]);}}
-		catch(e){console.log(e)}
-	}
 }
 function pet_preload(){ // 预加载
 	petmenu_load(config_petmenu); // 加载宠物菜单

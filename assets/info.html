@@ -3,8 +3,9 @@
 	<head>
 		<link href="ui/ui.css" rel="stylesheet"/>
 		<meta charset="UTF-8"/>
-		<title>Saka OPet 宠物信息</title>
+		<title>OPet 宠物信息</title>
 		<style>#pet_normal{height:90px;width:90px;}#pet_normal,table{display:inline-block}td{padding-left:3px;padding-right:3px;}</style>
+		<script src="common.js"></script>
 	</head>
 	<body>
 		<div class="window">
@@ -22,14 +23,13 @@
 					<ul id="content"></ul>
 				</div>
 				<hr/>
-				Saka OPet <span id="opet_version">-</span>
+				OPet <span id="opet_version">-</span>
 			</div>
 		</div>
 		<footer id="_loadjs"></footer>
 		<script src="pet.js"></script>
 		<script src="conf.js"></script>
 		<script>loadjs(conf.petroot+"/"+conf.petconf,"pet");</script>
-		<script src="ui.js"></script>
 		<script src="appinfo.js"></script>
 		<script>
 			function winframe_preload(){

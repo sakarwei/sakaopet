@@ -56,6 +56,7 @@ const createWindow = () => {
 			overrideBrowserWindowOptions: {
 				frame: false,
 				fullscreenable: false,
+				resizable: true,
 				transparent: true,
 				width: 500,
 				height: 400,
