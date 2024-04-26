@@ -123,9 +123,9 @@ function status_preload() {
 		<h2>宠物状态信息</h2>
 		更新时间：${time}<br/>
 		<table>
-			<tr><td>饥饿</td><td><span id="STAT_T_饥饿">${stat.饥饿.current}</span></td><td><progress id="STAT_P_饥饿" max="${stat.饥饿.preset}" value="${stat.饥饿.current}"></progress></td></tr>
-			<tr><td>清洁</td><td><span id="STAT_T_清洁">${stat.清洁.current}</span></td><td><progress id="STAT_P_清洁" max="${stat.清洁.preset}" value="${stat.清洁.current}"></progress></td></tr>
-			<tr><td>心情</td><td><span id="STAT_T_心情">${stat.心情.current}</span></td><td><progress id="STAT_P_心情" max="${stat.心情.preset}" value="${stat.心情.current}"></progress></td></tr>
+			<tr><td>饥饿</td><td><span id="STAT_T_饥饿">${stat.饥饿.current}/${stat.饥饿.preset}</span></td><td><progress id="STAT_P_饥饿" max="${stat.饥饿.preset}" value="${stat.饥饿.current}"></progress></td></tr>
+			<tr><td>清洁</td><td><span id="STAT_T_清洁">${stat.清洁.current}/${stat.清洁.preset}</span></td><td><progress id="STAT_P_清洁" max="${stat.清洁.preset}" value="${stat.清洁.current}"></progress></td></tr>
+			<tr><td>心情</td><td><span id="STAT_T_心情">${stat.心情.current}/${stat.心情.preset}</span></td><td><progress id="STAT_P_心情" max="${stat.心情.preset}" value="${stat.心情.current}"></progress></td></tr>
 		</table>
 		`
 		$(".main").appendChild(statdiv);

@@ -13,12 +13,12 @@ iframe{width:100%;height:100%;border:none;}
 div#tabs::-webkit-scrollbar{display:none;}
 /* 此注释以上是布局部分，以下是外观部分 */
 div#topbar span#drag{color:#fff8;font-size:2em;}
-div#topbar text#title{background:#fff;color:#000;border:3px solid;border-image:url("border.png") 3;border-bottom:none;}
+div#topbar text#title{background:#fff;color:#000;border:3px solid #ec6;border-bottom:none;}
 div#topbar img{image-rendering:pixelated;}
 div#topbar img:hover{filter:brightness(1.9);}
 /* button#refresh{background:linear-gradient(#0b0 50%,#0c0 50%);color:#fff;} */
 /* button#close{background:linear-gradient(#f00 50%,#f44 50%);color:#fff;} */
-div#topbar button{font-size:16px;}div#tabs button{font-size:16px;}
-div#tabs button{border:3px solid;border-right:none;border-image:url("border.png") 3;background:#ffe;font-family:'Unifont';}
+div#topbar button{font-size:16px;border-right:3px solid #ec6;}div#tabs button{font-size:16px;}
+div#tabs button{border:3px solid #ec6;border-right:none;background:#ffe;font-family:'Unifont';}
 div#tabs button:hover{background:#fe6;}
-div#page{background:#ffe;border:3px solid;border-image:url("border.png") 3;}
+div#page{background:#ffe;border:3px solid #ec6;}

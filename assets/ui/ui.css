@@ -8,7 +8,7 @@ div.titlebar button{float:right;border:none;background:transparent;}
 div.titlebar button:hover{background:#07f8;}
 div.titlebar button img{height:16px;width:16px;}
 div.main{position:fixed;top:8px;left:16px;right:16px;bottom:8px;overflow:auto;}
-div.main button{border:3px solid;border-image:url("border.png") 3;padding:5px;min-width:50px;background:transparent;font-family:'Unifont';font-size:16px;}
+div.main button{border:3px solid #ec6;padding:5px;min-width:50px;background:transparent;font-family:'Unifont';font-size:16px;}
 div.main button:hover{background:#fe6;}
 a{color:#00f;}
 a:hover,a:active{color:#f00;}

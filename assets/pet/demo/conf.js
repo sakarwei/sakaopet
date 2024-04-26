@@ -24,8 +24,8 @@ dict=[
 ];
 config_petitems=[]
 config_petmenu=[
-	{label:"宠物信息",exec:`pet_info();petmenu_close();`},
-	{label:"关于此软件",exec:`about();petmenu_close();`},
+	{label:"宠物信息",exec:new Function(`pet_info();petmenu_close();`)},
+	{label:"关于此软件",exec:new Function(`about();petmenu_close();`)},
 ]
 // 以下内容不建议非专业人员修改。
 if($("img#pet")){pet_preload();}else{winframe_preload();}
