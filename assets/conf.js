@@ -7,6 +7,7 @@ conf={
 	plugins:[ // 宠物界面插件
 		"achievements/achievements",
 		"status",
+		"count",
 	],
 	win_plugins:[ // 信息界面的插件
 		"achievements/achievements",
